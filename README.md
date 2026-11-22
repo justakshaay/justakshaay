@@ -209,6 +209,13 @@
   <strong>SHIP</strong> — Turn working ideas into real products.</p>
 </blockquote>
 
+<!-- Play the Next Move -->
+## Play the next move
+
+<p align="center">
+  <img src="./assets/chess-board.svg" alt="Chess Board — Italian Game Opening · 1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5" width="420"/>
+</p>
+
 <p align="center">──────── ◇ ────────</p>
 
 <!-- The Next Scene / Connect -->
