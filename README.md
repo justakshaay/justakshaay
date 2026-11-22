@@ -185,7 +185,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/justakshaay/justakshaay/output/github-contribution-grid-snake-dark.svg" alt="Contribution Trail Snake" width="100%" />
+  <img src="./assets/contribution-snake.svg" alt="Contribution Trail" width="100%"/>
 </p>
 
 <p align="center">
