@@ -241,7 +241,7 @@
   <a href="https://www.instagram.com/justakshaay/">
     <img src="https://img.shields.io/badge/Instagram-071a19?style=for-the-badge&logo=instagram&logoColor=2dd4bf" alt="Instagram" />
   </a>
-  <a href="mailto:akshaykkumar2006@gmail.com">
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akshaykkumar2006@gmail.com">
     <img src="https://img.shields.io/badge/Email-071a19?style=for-the-badge&logo=gmail&logoColor=2dd4bf" alt="Email" />
   </a>
 </p>
