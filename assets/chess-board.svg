@@ -28,20 +28,76 @@
     </filter>
   </defs>
 
-  <style>@keyframes glowPulse { 0%,100% { opacity:0.55; } 50% { opacity:0.9; } }
+  <style>
+@keyframes glowPulse { 0%,100% { opacity:0.55; } 50% { opacity:0.9; } }
 .gp { animation: glowPulse 3.5s ease-in-out infinite; }
-@keyframes mvawp { 0% { transform:translate(0px,0px); animation-timing-function:cubic-bezier(0.4,0,0.2,1); } 10% { transform:translate(0px,-100px); } 80% { transform:translate(0px,-100px); animation-timing-function:cubic-bezier(0.4,0,0.2,1); } 100% { transform:translate(0px,0px); } }
-#a-wp { animation:mvawp 20s linear infinite; }
-@keyframes mvabp { 0% { transform:translate(0px,0px); } 10% { transform:translate(0px,0px); animation-timing-function:cubic-bezier(0.4,0,0.2,1); } 20% { transform:translate(0px,100px); } 80% { transform:translate(0px,100px); animation-timing-function:cubic-bezier(0.4,0,0.2,1); } 100% { transform:translate(0px,0px); } }
-#a-bp { animation:mvabp 20s linear infinite; }
-@keyframes mvawn { 0% { transform:translate(0px,0px); } 20% { transform:translate(0px,0px); animation-timing-function:cubic-bezier(0.4,0,0.2,1); } 30% { transform:translate(-50px,-100px); } 80% { transform:translate(-50px,-100px); animation-timing-function:cubic-bezier(0.4,0,0.2,1); } 100% { transform:translate(0px,0px); } }
-#a-wn { animation:mvawn 20s linear infinite; }
-@keyframes mvabn { 0% { transform:translate(0px,0px); } 30% { transform:translate(0px,0px); animation-timing-function:cubic-bezier(0.4,0,0.2,1); } 40% { transform:translate(50px,100px); } 80% { transform:translate(50px,100px); animation-timing-function:cubic-bezier(0.4,0,0.2,1); } 100% { transform:translate(0px,0px); } }
-#a-bn { animation:mvabn 20s linear infinite; }
-@keyframes mvawb { 0% { transform:translate(0px,0px); } 40% { transform:translate(0px,0px); animation-timing-function:cubic-bezier(0.4,0,0.2,1); } 50% { transform:translate(-150px,-150px); } 80% { transform:translate(-150px,-150px); animation-timing-function:cubic-bezier(0.4,0,0.2,1); } 100% { transform:translate(0px,0px); } }
-#a-wb { animation:mvawb 20s linear infinite; }
-@keyframes mvabb { 0% { transform:translate(0px,0px); } 50% { transform:translate(0px,0px); animation-timing-function:cubic-bezier(0.4,0,0.2,1); } 60% { transform:translate(-150px,150px); } 80% { transform:translate(-150px,150px); animation-timing-function:cubic-bezier(0.4,0,0.2,1); } 100% { transform:translate(0px,0px); } }
-#a-bb { animation:mvabb 20s linear infinite; }</style>
+@keyframes mv-wp {
+      0%   { transform: translate(0px, 0px); }
+      40%  { transform: translate(0px, -100px); }
+      55%  { transform: translate(0px, -100px); }
+      90%  { transform: translate(0px, 0px); }
+      100% { transform: translate(0px, 0px); }
+    }
+    #a-wp {
+      animation: mv-wp 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+      animation-delay: 0s;
+    }
+@keyframes mv-bp {
+      0%   { transform: translate(0px, 0px); }
+      40%  { transform: translate(0px, 100px); }
+      55%  { transform: translate(0px, 100px); }
+      90%  { transform: translate(0px, 0px); }
+      100% { transform: translate(0px, 0px); }
+    }
+    #a-bp {
+      animation: mv-bp 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+      animation-delay: -1.4s;
+    }
+@keyframes mv-wn {
+      0%   { transform: translate(0px, 0px); }
+      40%  { transform: translate(-50px, -100px); }
+      55%  { transform: translate(-50px, -100px); }
+      90%  { transform: translate(0px, 0px); }
+      100% { transform: translate(0px, 0px); }
+    }
+    #a-wn {
+      animation: mv-wn 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+      animation-delay: -2.8s;
+    }
+@keyframes mv-bn {
+      0%   { transform: translate(0px, 0px); }
+      40%  { transform: translate(50px, 100px); }
+      55%  { transform: translate(50px, 100px); }
+      90%  { transform: translate(0px, 0px); }
+      100% { transform: translate(0px, 0px); }
+    }
+    #a-bn {
+      animation: mv-bn 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+      animation-delay: -4.2s;
+    }
+@keyframes mv-wb {
+      0%   { transform: translate(0px, 0px); }
+      40%  { transform: translate(-150px, -150px); }
+      55%  { transform: translate(-150px, -150px); }
+      90%  { transform: translate(0px, 0px); }
+      100% { transform: translate(0px, 0px); }
+    }
+    #a-wb {
+      animation: mv-wb 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+      animation-delay: -5.6s;
+    }
+@keyframes mv-bb {
+      0%   { transform: translate(0px, 0px); }
+      40%  { transform: translate(-150px, 150px); }
+      55%  { transform: translate(-150px, 150px); }
+      90%  { transform: translate(0px, 0px); }
+      100% { transform: translate(0px, 0px); }
+    }
+    #a-bb {
+      animation: mv-bb 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+      animation-delay: -7.0s;
+    }
+  </style>
 
   <!-- ── Aura Double-Frame ── -->
   <rect width="480" height="480" fill="#071a19" rx="20"/>
@@ -144,21 +200,18 @@
     <text x="417" y="444" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">h</text>
   </g>
 
-  <!-- ── Chess Pieces (Italian Game opening animation) ── -->
+  <!-- ── Chess Pieces (Static pieces first, then animated pieces in front) ── -->
   <g id="pieces">
     <g transform="translate(67,401)"><g filter="url(#wGlow)"><path d="M -12,2 L 12,2 L 12,-2 L 9,-2 L 9,-12 L 12,-12 L 12,-17 L 7,-17 L 7,-14 L 2,-14 L 2,-17 L -2,-17 L -2,-14 L -7,-14 L -7,-17 L -12,-17 L -12,-12 L -9,-12 L -9,-2 L -12,-2 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(117,401)"><g filter="url(#wGlow)"><path d="M -12,2 L 12,2 L 12,-2 L 9,-2 L 9,-4 C 12,-6 13,-10 11,-14 C 10,-17 7,-20 4,-21 C 5,-22 6,-24 4,-25 C 2,-26 0,-25 -1,-23 C -2,-21 -4,-20 -6,-19 C -10,-18 -12,-14 -12,-9 L -12,-2 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(167,401)"><g filter="url(#wGlow)"><path d="M 0,-23 C -1,-26 1,-26 0,-23 C -3,-20 -5,-16 -5,-11 C -7,-9 -9,-6 -9,-2 L -12,-2 L -12,2 L 12,2 L 12,-2 L 9,-2 C 9,-6 7,-9 5,-11 C 5,-16 3,-20 0,-23 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(217,401)"><g filter="url(#wGlow)"><path d="M -13,2 L 13,2 L 13,-2 L 10,-2 C 10,-6 8,-10 6,-12 L 9,-19 L 6,-22 L 3,-16 L 0,-21 L -3,-16 L -6,-22 L -9,-19 L -6,-12 C -8,-10 -10,-6 -10,-2 L -13,-2 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(267,401)"><g filter="url(#wGlow)"><path d="M -13,2 L 13,2 L 13,-2 L 10,-2 C 10,-7 8,-11 5,-14 L -5,-14 C -8,-11 -10,-7 -10,-2 L -13,-2 Z M -2,-14 L -2,-20 L -5,-20 L -5,-23 L -2,-23 L -2,-28 L 2,-28 L 2,-23 L 5,-23 L 5,-20 L 2,-20 L 2,-14 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(317,401)"><g id="a-wb" filter="url(#wGlow)"><path d="M 0,-23 C -1,-26 1,-26 0,-23 C -3,-20 -5,-16 -5,-11 C -7,-9 -9,-6 -9,-2 L -12,-2 L -12,2 L 12,2 L 12,-2 L 9,-2 C 9,-6 7,-9 5,-11 C 5,-16 3,-20 0,-23 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(367,401)"><g id="a-wn" filter="url(#wGlow)"><path d="M -12,2 L 12,2 L 12,-2 L 9,-2 L 9,-4 C 12,-6 13,-10 11,-14 C 10,-17 7,-20 4,-21 C 5,-22 6,-24 4,-25 C 2,-26 0,-25 -1,-23 C -2,-21 -4,-20 -6,-19 C -10,-18 -12,-14 -12,-9 L -12,-2 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(417,401)"><g filter="url(#wGlow)"><path d="M -12,2 L 12,2 L 12,-2 L 9,-2 L 9,-12 L 12,-12 L 12,-17 L 7,-17 L 7,-14 L 2,-14 L 2,-17 L -2,-17 L -2,-14 L -7,-14 L -7,-17 L -12,-17 L -12,-12 L -9,-12 L -9,-2 L -12,-2 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(67,351)"><g filter="url(#wGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(117,351)"><g filter="url(#wGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(167,351)"><g filter="url(#wGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(217,351)"><g filter="url(#wGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(267,351)"><g id="a-wp" filter="url(#wGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(317,351)"><g filter="url(#wGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(367,351)"><g filter="url(#wGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(417,351)"><g filter="url(#wGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
@@ -166,17 +219,20 @@
     <g transform="translate(117,101)"><g filter="url(#bGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(167,101)"><g filter="url(#bGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(217,101)"><g filter="url(#bGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(267,101)"><g id="a-bp" filter="url(#bGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(317,101)"><g filter="url(#bGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(367,101)"><g filter="url(#bGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(417,101)"><g filter="url(#bGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(67,51)"><g filter="url(#bGlow)"><path d="M -12,2 L 12,2 L 12,-2 L 9,-2 L 9,-12 L 12,-12 L 12,-17 L 7,-17 L 7,-14 L 2,-14 L 2,-17 L -2,-17 L -2,-14 L -7,-14 L -7,-17 L -12,-17 L -12,-12 L -9,-12 L -9,-2 L -12,-2 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(117,51)"><g id="a-bn" filter="url(#bGlow)"><path d="M -12,2 L 12,2 L 12,-2 L 9,-2 L 9,-4 C 12,-6 13,-10 11,-14 C 10,-17 7,-20 4,-21 C 5,-22 6,-24 4,-25 C 2,-26 0,-25 -1,-23 C -2,-21 -4,-20 -6,-19 C -10,-18 -12,-14 -12,-9 L -12,-2 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(167,51)"><g filter="url(#bGlow)"><path d="M 0,-23 C -1,-26 1,-26 0,-23 C -3,-20 -5,-16 -5,-11 C -7,-9 -9,-6 -9,-2 L -12,-2 L -12,2 L 12,2 L 12,-2 L 9,-2 C 9,-6 7,-9 5,-11 C 5,-16 3,-20 0,-23 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(217,51)"><g filter="url(#bGlow)"><path d="M -13,2 L 13,2 L 13,-2 L 10,-2 C 10,-6 8,-10 6,-12 L 9,-19 L 6,-22 L 3,-16 L 0,-21 L -3,-16 L -6,-22 L -9,-19 L -6,-12 C -8,-10 -10,-6 -10,-2 L -13,-2 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(267,51)"><g filter="url(#bGlow)"><path d="M -13,2 L 13,2 L 13,-2 L 10,-2 C 10,-7 8,-11 5,-14 L -5,-14 C -8,-11 -10,-7 -10,-2 L -13,-2 Z M -2,-14 L -2,-20 L -5,-20 L -5,-23 L -2,-23 L -2,-28 L 2,-28 L 2,-23 L 5,-23 L 5,-20 L 2,-20 L 2,-14 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(317,51)"><g id="a-bb" filter="url(#bGlow)"><path d="M 0,-23 C -1,-26 1,-26 0,-23 C -3,-20 -5,-16 -5,-11 C -7,-9 -9,-6 -9,-2 L -12,-2 L -12,2 L 12,2 L 12,-2 L 9,-2 C 9,-6 7,-9 5,-11 C 5,-16 3,-20 0,-23 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(367,51)"><g filter="url(#bGlow)"><path d="M -12,2 L 12,2 L 12,-2 L 9,-2 L 9,-4 C 12,-6 13,-10 11,-14 C 10,-17 7,-20 4,-21 C 5,-22 6,-24 4,-25 C 2,-26 0,-25 -1,-23 C -2,-21 -4,-20 -6,-19 C -10,-18 -12,-14 -12,-9 L -12,-2 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
     <g transform="translate(417,51)"><g filter="url(#bGlow)"><path d="M -12,2 L 12,2 L 12,-2 L 9,-2 L 9,-12 L 12,-12 L 12,-17 L 7,-17 L 7,-14 L 2,-14 L 2,-17 L -2,-17 L -2,-14 L -7,-14 L -7,-17 L -12,-17 L -12,-12 L -9,-12 L -9,-2 L -12,-2 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
+    <g transform="translate(317,401)"><g id="a-wb" filter="url(#wGlow)"><path d="M 0,-23 C -1,-26 1,-26 0,-23 C -3,-20 -5,-16 -5,-11 C -7,-9 -9,-6 -9,-2 L -12,-2 L -12,2 L 12,2 L 12,-2 L 9,-2 C 9,-6 7,-9 5,-11 C 5,-16 3,-20 0,-23 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
+    <g transform="translate(367,401)"><g id="a-wn" filter="url(#wGlow)"><path d="M -12,2 L 12,2 L 12,-2 L 9,-2 L 9,-4 C 12,-6 13,-10 11,-14 C 10,-17 7,-20 4,-21 C 5,-22 6,-24 4,-25 C 2,-26 0,-25 -1,-23 C -2,-21 -4,-20 -6,-19 C -10,-18 -12,-14 -12,-9 L -12,-2 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
+    <g transform="translate(267,351)"><g id="a-wp" filter="url(#wGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
+    <g transform="translate(267,101)"><g id="a-bp" filter="url(#bGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
+    <g transform="translate(117,51)"><g id="a-bn" filter="url(#bGlow)"><path d="M -12,2 L 12,2 L 12,-2 L 9,-2 L 9,-4 C 12,-6 13,-10 11,-14 C 10,-17 7,-20 4,-21 C 5,-22 6,-24 4,-25 C 2,-26 0,-25 -1,-23 C -2,-21 -4,-20 -6,-19 C -10,-18 -12,-14 -12,-9 L -12,-2 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
+    <g transform="translate(317,51)"><g id="a-bb" filter="url(#bGlow)"><path d="M 0,-23 C -1,-26 1,-26 0,-23 C -3,-20 -5,-16 -5,-11 C -7,-9 -9,-6 -9,-2 L -12,-2 L -12,2 L 12,2 L 12,-2 L 9,-2 C 9,-6 7,-9 5,-11 C 5,-16 3,-20 0,-23 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
   </g>
 </svg>

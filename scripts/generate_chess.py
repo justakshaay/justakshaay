@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
 Generate assets/chess-board.svg
-Aura glassmorphic chess board with Italian Game opening animation.
-Pure SVG CSS – no JavaScript, no SMIL, no external resources.
+Aura glassmorphic chess board with fluid 60fps CSS transform ping-pong animations.
+Staggered Italian Game opening (e4, e5, Nf3, Nc6, Bc4, Bc5).
+Pure SVG CSS – no JavaScript, no SMIL, no external dependencies.
 """
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -21,7 +22,6 @@ def sq_cx(f): return BX + f * SQ + SQ // 2       # center x of file f (0=a..7=h)
 def sq_cy(r): return BY + (7 - r) * SQ + SQ // 2 # center y of rank r (0=rank1 bottom)
 
 # ─── Piece SVG paths (all centered at origin 0,0) ────────────────────────────
-# Design principle: recognizable Staunton-inspired silhouettes at 50px square.
 PP = {
     # PAWN: round head, narrow neck, wide base
     "P": ("M 0,-17 C -5,-17 -6,-12 -4,-9 "
@@ -80,52 +80,46 @@ START = [
     ('K',4,7,'b'), ('B',5,7,'b'), ('N',6,7,'b'), ('R',7,7,'b'),
 ]
 
-# ─── Italian Game moves ───────────────────────────────────────────────────────
-# 20-second loop:  each move = 10%  |  60-80% = hold  |  80-100% = smooth return
-# (from_file, from_rank, delta_x_px, delta_y_px, css_id)
+# ─── Italian Game moves (Ping-Pong Choreography) ───────────────────────────────
+# (from_file, from_rank, dx, dy, css_id, delay)
 MOVES = [
-    (4, 1,    0, -100, "a-wp"),  # 1. e2→e4  white pawn
-    (4, 6,    0, +100, "a-bp"),  # 1. e7→e5  black pawn
-    (6, 0,  -50, -100, "a-wn"),  # 2. g1→f3  white knight
-    (1, 7,  +50, +100, "a-bn"),  # 2. b8→c6  black knight
-    (5, 0, -150, -150, "a-wb"),  # 3. f1→c4  white bishop
-    (5, 7, -150, +150, "a-bb"),  # 3. f8→c5  black bishop
+    (4, 1,    0, -100, "a-wp", "0s"),      # 1. White Pawn: e2 ↔ e4 (translate(0, -2*SQ))
+    (4, 6,    0, +100, "a-bp", "-1.4s"),   # 2. Black Pawn: e7 ↔ e5 (translate(0, +2*SQ))
+    (6, 0,  -50, -100, "a-wn", "-2.8s"),   # 3. White Knight: g1 ↔ f3 (translate(-1*SQ, -2*SQ))
+    (1, 7,  +50, +100, "a-bn", "-4.2s"),   # 4. Black Knight: b8 ↔ c6 (translate(+1*SQ, +2*SQ))
+    (5, 0, -150, -150, "a-wb", "-5.6s"),   # 5. White Bishop: f1 ↔ c4 (translate(-3*SQ, -3*SQ))
+    (5, 7, -150, +150, "a-bb", "-7.0s"),   # 6. Black Bishop: f8 ↔ c5 (translate(-3*SQ, +3*SQ))
 ]
 
-ANIM_MAP = {(f, r): aid for f, r, dx, dy, aid in MOVES}
+ANIM_MAP = {(f, r): aid for f, r, dx, dy, aid, _delay in MOVES}
 
 
 # ─── Build CSS animation block ────────────────────────────────────────────────
 def build_css():
-    ease = "cubic-bezier(0.4,0,0.2,1)"
     lines = [
         "@keyframes glowPulse { 0%,100% { opacity:0.55; } 50% { opacity:0.9; } }",
         ".gp { animation: glowPulse 3.5s ease-in-out infinite; }",
     ]
-    for i, (f_, r_, dx, dy, aid) in enumerate(MOVES):
-        sp   = i * 10        # start-percent for this move
-        ep   = sp + 10       # end-percent (move complete)
-        name = "mv" + aid.replace("-", "")
-
-        kf = "@keyframes " + name + " {"
-        # Phase 1: hold at start position (0% .. sp%)
-        if sp > 0:
-            kf += " 0% { transform:translate(0px,0px); }"
-            kf += " " + str(sp) + "% { transform:translate(0px,0px);"
-            kf += " animation-timing-function:" + ease + "; }"
-        else:
-            kf += " 0% { transform:translate(0px,0px);"
-            kf += " animation-timing-function:" + ease + "; }"
-        # Phase 2: glide to target (sp% .. ep%)
-        kf += " " + str(ep) + "% { transform:translate(" + str(dx) + "px," + str(dy) + "px); }"
-        # Phase 3: hold at target (ep% .. 80%)
-        kf += " 80% { transform:translate(" + str(dx) + "px," + str(dy) + "px);"
-        kf += " animation-timing-function:" + ease + "; }"
-        # Phase 4: glide back to start (80% .. 100%)
-        kf += " 100% { transform:translate(0px,0px); } }"
-
+    ease = "cubic-bezier(0.42, 0, 0.58, 1)"
+    for f_, r_, dx, dy, aid, delay in MOVES:
+        kf_name = "mv-" + aid.split("-")[1]
+        kf = (
+            f"@keyframes {kf_name} {{\n"
+            f"      0%   {{ transform: translate(0px, 0px); }}\n"
+            f"      40%  {{ transform: translate({dx}px, {dy}px); }}\n"
+            f"      55%  {{ transform: translate({dx}px, {dy}px); }}\n"
+            f"      90%  {{ transform: translate(0px, 0px); }}\n"
+            f"      100% {{ transform: translate(0px, 0px); }}\n"
+            f"    }}"
+        )
         lines.append(kf)
-        lines.append("#" + aid + " { animation:" + name + " 20s linear infinite; }")
+        rule = (
+            f"    #{aid} {{\n"
+            f"      animation: {kf_name} 10s {ease} infinite;\n"
+            f"      animation-delay: {delay};\n"
+            f"    }}"
+        )
+        lines.append(rule)
 
     return "\n".join(lines)
 
@@ -146,7 +140,7 @@ def main():
     labels = []
     for r in range(8):
         lx = BX - 15
-        ly = BY + (7 - r) * SQ + SQ // 2 + 4   # +4 for text baseline
+        ly = BY + (7 - r) * SQ + SQ // 2 + 4
         labels.append(f'<text x="{lx}" y="{ly}" {font_attrs}>{r + 1}</text>')
     for f in range(8):
         lx = BX + f * SQ + SQ // 2
@@ -154,10 +148,11 @@ def main():
         labels.append(f'<text x="{lx}" y="{ly}" {font_attrs}>{chr(ord("a") + f)}</text>')
 
     # ── Chess pieces ──
-    # Each piece: outer <g> positions at starting square via SVG 'transform' attribute;
-    # inner <g> (with optional CSS id) receives the CSS translate animation.
-    # Using nested groups avoids CSS/attribute transform conflicts.
-    pieces = []
+    # Split into static pieces and animated pieces so animated pieces render AFTER
+    # static pieces in the SVG DOM (guaranteeing higher z-index stacking).
+    static_pieces = []
+    animated_pieces = []
+
     for piece, file, rank, side in START:
         x, y = sq_cx(file), sq_cy(rank)
         aid  = ANIM_MAP.get((file, rank))
@@ -165,13 +160,17 @@ def main():
         stroke = "#0891b2" if side == 'w' else "#134e4a"
         gfilt  = "wGlow"  if side == 'w' else "bGlow"
         inner_id = f' id="{aid}"' if aid else ''
-        pieces.append(
+        piece_markup = (
             f'<g transform="translate({x},{y})">'
             f'<g{inner_id} filter="url(#{gfilt})">'
             f'<path d="{PP[piece]}" fill="{fill}" stroke="{stroke}" '
             f'stroke-width="1.2" stroke-linejoin="round"/>'
             f'</g></g>'
         )
+        if aid:
+            animated_pieces.append(piece_markup)
+        else:
+            static_pieces.append(piece_markup)
 
     # ── CSS ──
     css = build_css()
@@ -179,7 +178,8 @@ def main():
     # ── Assemble blocks ──
     sq_str = "\n    ".join(squares)
     lb_str = "\n    ".join(labels)
-    pc_str = "\n    ".join(pieces)
+    # Static first, animated last for proper stacking
+    pc_str = "\n    ".join(static_pieces + animated_pieces)
     BW = 8 * SQ  # board width/height = 400
 
     svg = (
@@ -213,7 +213,7 @@ def main():
         '    </filter>\n'
         '  </defs>\n'
         '\n'
-        f'  <style>{css}</style>\n'
+        f'  <style>\n{css}\n  </style>\n'
         '\n'
         '  <!-- ── Aura Double-Frame ── -->\n'
         f'  <rect width="{W}" height="{H}" fill="#071a19" rx="20"/>\n'
@@ -238,7 +238,7 @@ def main():
         f'    {lb_str}\n'
         '  </g>\n'
         '\n'
-        '  <!-- ── Chess Pieces (Italian Game opening animation) ── -->\n'
+        '  <!-- ── Chess Pieces (Static pieces first, then animated pieces in front) ── -->\n'
         '  <g id="pieces">\n'
         f'    {pc_str}\n'
         '  </g>\n'
@@ -251,11 +251,6 @@ def main():
         print("XML validation: PASS")
     except ET.ParseError as e:
         print(f"XML validation FAILED: {e}")
-        # Print the problematic area
-        lines = svg.split('\n')
-        for ln, l in enumerate(lines, 1):
-            if any(c in l for c in ['<', '&', '>']):
-                pass
         raise
 
     # ── Write ──
