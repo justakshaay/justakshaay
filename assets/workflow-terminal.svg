@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" width="100%" height="100%">
+  <defs>
+    <linearGradient id="wfCardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#051514" />
+      <stop offset="100%" stop-color="#092624" />
+    </linearGradient>
+    <linearGradient id="stepBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a2e2b" />
+      <stop offset="100%" stop-color="#051817" />
+    </linearGradient>
+  </defs>
+
+  <!-- Container -->
+  <rect x="1" y="1" width="918" height="218" rx="14" fill="url(#wfCardBg)" stroke="#134e4a" stroke-width="1.5" />
+
+  <!-- Terminal Top Bar -->
+  <rect x="1" y="1" width="918" height="36" rx="14" fill="#071a19" stroke="#134e4a" stroke-width="1" />
+  <rect x="1" y="22" width="918" height="14" fill="#071a19" />
+  <line x1="1" y1="36" x2="919" y2="36" stroke="#134e4a" stroke-width="1" />
+
+  <circle cx="24" cy="18" r="5.5" fill="#ef4444" />
+  <circle cx="42" cy="18" r="5.5" fill="#eab308" />
+  <circle cx="60" cy="18" r="5.5" fill="#22c55e" />
+
+  <text x="460" y="23" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" fill="#64748b" font-weight="500">justakshaay@pipeline:~/beyond-the-code --inspect</text>
+
+  <!-- 5 Workflow Steps -->
+  <!-- Step 1: DESIGN -->
+  <g transform="translate(22, 54)">
+    <rect width="158" height="116" rx="8" fill="url(#stepBg)" stroke="#115e59" stroke-width="1" />
+    <text x="14" y="26" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#2dd4bf">01 // DESIGN</text>
+    <text x="14" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#e2e8f0" font-weight="600">Understand problem</text>
+    <text x="14" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">before writing</text>
+    <text x="14" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">any system code.</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <text x="191" y="116" text-anchor="middle" font-family="monospace" font-size="16" fill="#2dd4bf" font-weight="bold">→</text>
+
+  <!-- Step 2: ENGINEER -->
+  <g transform="translate(202, 54)">
+    <rect width="158" height="116" rx="8" fill="url(#stepBg)" stroke="#115e59" stroke-width="1" />
+    <text x="14" y="26" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#2dd4bf">02 // ENGINEER</text>
+    <text x="14" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#e2e8f0" font-weight="600">Build with purpose</text>
+    <text x="14" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">structure, stability,</text>
+    <text x="14" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">&amp; maintainability.</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <text x="371" y="116" text-anchor="middle" font-family="monospace" font-size="16" fill="#2dd4bf" font-weight="bold">→</text>
+
+  <!-- Step 3: EXPERIMENT -->
+  <g transform="translate(382, 54)">
+    <rect width="158" height="116" rx="8" fill="url(#stepBg)" stroke="#115e59" stroke-width="1" />
+    <text x="14" y="26" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#2dd4bf">03 // EXPERIMENT</text>
+    <text x="14" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#e2e8f0" font-weight="600">Explore new ideas</text>
+    <text x="14" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">beyond standard</text>
+    <text x="14" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">preset boundaries.</text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <text x="551" y="116" text-anchor="middle" font-family="monospace" font-size="16" fill="#2dd4bf" font-weight="bold">→</text>
+
+  <!-- Step 4: ITERATE -->
+  <g transform="translate(562, 54)">
+    <rect width="158" height="116" rx="8" fill="url(#stepBg)" stroke="#115e59" stroke-width="1" />
+    <text x="14" y="26" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#2dd4bf">04 // ITERATE</text>
+    <text x="14" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#e2e8f0" font-weight="600">Refine and test</text>
+    <text x="14" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">through rigorous</text>
+    <text x="14" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">feedback loops.</text>
+  </g>
+
+  <!-- Arrow 4 -->
+  <text x="731" y="116" text-anchor="middle" font-family="monospace" font-size="16" fill="#2dd4bf" font-weight="bold">→</text>
+
+  <!-- Step 5: SHIP -->
+  <g transform="translate(742, 54)">
+    <rect width="158" height="116" rx="8" fill="url(#stepBg)" stroke="#115e59" stroke-width="1" />
+    <text x="14" y="26" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#2dd4bf">05 // SHIP</text>
+    <text x="14" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#e2e8f0" font-weight="600">Deliver practical</text>
+    <text x="14" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">working software</text>
+    <text x="14" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">into production.</text>
+  </g>
+
+  <!-- Footer Pipeline Status -->
+  <text x="460" y="198" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#2dd4bf" letter-spacing="1.5px">[PIPELINE STATUS: ACTIVE] · [BUILD: CONTINUOUS] · [STANDARD: HIGH RIGOR]</text>
+</svg>

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071a19" />
+      <stop offset="50%" stop-color="#0a2a27" />
+      <stop offset="100%" stop-color="#0f3d39" />
+    </linearGradient>
+    <radialGradient id="glowTopRight" cx="85%" cy="15%" r="50%">
+      <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#071a19" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="avatarAura" cx="50%" cy="50%" r="50%">
+      <stop offset="70%" stop-color="#2dd4bf" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#071a19" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2dd4bf" />
+      <stop offset="100%" stop-color="#14b8a6" />
+    </linearGradient>
+    <clipPath id="avatarClip">
+      <circle cx="120" cy="125" r="54" />
+    </clipPath>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect x="1" y="1" width="918" height="248" rx="20" fill="url(#cardBg)" stroke="#134e4a" stroke-width="1.5" />
+  <rect x="1" y="1" width="918" height="248" rx="20" fill="url(#glowTopRight)" />
+
+  <!-- Inner Glass Panel -->
+  <rect x="12" y="12" width="896" height="226" rx="14" fill="#041211" fill-opacity="0.45" stroke="#115e59" stroke-width="1" stroke-opacity="0.5" />
+
+  <!-- Avatar Outer Glow and Frame -->
+  <circle cx="120" cy="125" r="70" fill="url(#avatarAura)" />
+  <circle cx="120" cy="125" r="59" fill="none" stroke="#14b8a6" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.7" />
+  <circle cx="120" cy="125" r="56" fill="#071a19" stroke="#2dd4bf" stroke-width="2.5" />
+  <image href="https://avatars.githubusercontent.com/u/236445037?v=4" x="66" y="71" width="108" height="108" preserveAspectRatio="xMidYMid slice" clip-path="url(#avatarClip)" />
+
+  <!-- Live Status Badge Top Right -->
+  <g transform="translate(744, 26)">
+    <rect width="150" height="28" rx="14" fill="#061d1b" stroke="#134e4a" stroke-width="1" />
+    <circle cx="16" cy="14" r="4" fill="#2dd4bf" />
+    <text x="28" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="10.5" font-weight="700" fill="#2dd4bf" letter-spacing="1.2px">SYSTEMS // ACTIVE</text>
+  </g>
+
+  <!-- Profile Details -->
+  <!-- Handle -->
+  <text x="206" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="600" fill="#2dd4bf" letter-spacing="0.3px">@justakshaay</text>
+
+  <!-- Name -->
+  <text x="206" y="110" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="33" font-weight="800" fill="#ffffff" letter-spacing="-0.5px">Akshay Rajput</text>
+
+  <!-- Role -->
+  <text x="206" y="137" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#99f6e4" opacity="0.95">Software Developer | AI/ML Engineer</text>
+
+  <!-- Tagline -->
+  <text x="206" y="164" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13.5" font-style="italic" fill="#94a3b8">Ideas into systems. Systems into reality.</text>
+
+  <!-- Pill Tags -->
+  <g transform="translate(206, 186)">
+    <!-- Pill 1: AI/ML -->
+    <rect x="0" y="0" width="68" height="26" rx="13" fill="#082624" stroke="#14b8a6" stroke-width="1" stroke-opacity="0.7" />
+    <text x="34" y="17" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="11.5" font-weight="600" fill="#99f6e4">AI/ML</text>
+
+    <!-- Pill 2: Full-Stack -->
+    <rect x="78" y="0" width="92" height="26" rx="13" fill="#082624" stroke="#14b8a6" stroke-width="1" stroke-opacity="0.7" />
+    <text x="124" y="17" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="11.5" font-weight="600" fill="#99f6e4">Full-Stack</text>
+
+    <!-- Pill 3: Python -->
+    <rect x="180" y="0" width="76" height="26" rx="13" fill="#082624" stroke="#14b8a6" stroke-width="1" stroke-opacity="0.7" />
+    <text x="218" y="17" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="11.5" font-weight="600" fill="#99f6e4">Python</text>
+
+    <!-- Pill 4: TypeScript -->
+    <rect x="266" y="0" width="98" height="26" rx="13" fill="#082624" stroke="#14b8a6" stroke-width="1" stroke-opacity="0.7" />
+    <text x="315" y="17" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="11.5" font-weight="600" fill="#99f6e4">TypeScript</text>
+
+    <!-- Pill 5: C++ -->
+    <rect x="374" y="0" width="58" height="26" rx="13" fill="#082624" stroke="#14b8a6" stroke-width="1" stroke-opacity="0.7" />
+    <text x="403" y="17" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="11.5" font-weight="600" fill="#99f6e4">C++</text>
+  </g>
+</svg>

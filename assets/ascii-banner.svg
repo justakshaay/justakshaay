@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 180" width="100%" height="100%">
+  <defs>
+    <linearGradient id="termGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#051514" />
+      <stop offset="100%" stop-color="#020b0a" />
+    </linearGradient>
+  </defs>
+
+  <!-- Terminal Frame -->
+  <rect x="1" y="1" width="918" height="178" rx="14" fill="url(#termGrad)" stroke="#134e4a" stroke-width="1.5" />
+
+  <!-- Terminal Top Bar -->
+  <rect x="1" y="1" width="918" height="38" rx="14" fill="#071a19" stroke="#134e4a" stroke-width="1" />
+  <rect x="1" y="22" width="918" height="16" fill="#071a19" />
+  <line x1="1" y1="38" x2="919" y2="38" stroke="#134e4a" stroke-width="1" />
+
+  <!-- Mac Control Dots -->
+  <circle cx="24" cy="19" r="5.5" fill="#ef4444" />
+  <circle cx="42" cy="19" r="5.5" fill="#eab308" />
+  <circle cx="60" cy="19" r="5.5" fill="#22c55e" />
+
+  <!-- Terminal Command Title -->
+  <text x="460" y="24" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="12" fill="#64748b" font-weight="500">justakshaay@github:~$ ./wordmark.sh --user</text>
+
+  <!-- Monospace ASCII Art -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="11.5" fill="#2dd4bf" font-weight="bold" xml:space="preserve" text-anchor="middle">
+    <text x="460" y="68"> █████╗ ██╗  ██╗███████╗██╗  ██╗ █████╗ ██╗   ██╗    ██████╗  █████╗      ██╗██████╗ ██╗   ██╗████████╗</text>
+    <text x="460" y="84">██╔══██╗██║ ██╔╝██╔════╝██║  ██║██╔══██╗╚██╗ ██╔╝    ██╔══██╗██╔══██╗     ██║██╔══██╗██║   ██║╚══██╔══╝</text>
+    <text x="460" y="100">███████║█████═╝ ███████╗███████║███████║ ╚████╔╝     ██████╔╝███████║     ██║██████╔╝██║   ██║   ██║   </text>
+    <text x="460" y="116">██╔══██║██╔═██╗ ╚════██║██╔══██║██╔══██║  ╚██╔╝      ██╔══██╗██╔══██║██   ██║██╔═══╝ ██║   ██║   ██║   </text>
+    <text x="460" y="132">██║  ██║██║ ╚██╗███████║██║  ██║██║  ██║   ██║       ██║  ██║██║  ██║╚█████╔╝██║     ╚██████╔╝   ██║   </text>
+    <text x="460" y="148">╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝       ╚═╝  ╚═╝╚═╝  ╚═╝ ╚════╝ ╚═╝      ╚═════╝    ╚═╝   </text>
+  </g>
+</svg>
