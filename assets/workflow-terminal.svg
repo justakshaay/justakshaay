@@ -1,87 +1,125 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" width="100%" height="100%">
   <defs>
-    <linearGradient id="wfCardBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#051514" />
-      <stop offset="100%" stop-color="#092624" />
+    <!-- Aura Double-Frame Outer Gradient -->
+    <linearGradient id="wfOuterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14b8a6" stop-opacity="0.32" />
+      <stop offset="35%" stop-color="#0d9488" stop-opacity="0.22" />
+      <stop offset="75%" stop-color="#082f49" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#071a19" />
     </linearGradient>
-    <linearGradient id="stepBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0a2e2b" />
-      <stop offset="100%" stop-color="#051817" />
+
+    <radialGradient id="wfAuraRadial" cx="80%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.28" />
+      <stop offset="50%" stop-color="#0d9488" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#071a19" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Workflow Step Card Gradient -->
+    <linearGradient id="wfStepBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#092d2a" />
+      <stop offset="100%" stop-color="#041615" />
     </linearGradient>
   </defs>
 
-  <!-- Container -->
-  <rect x="1" y="1" width="918" height="218" rx="14" fill="url(#wfCardBg)" stroke="#134e4a" stroke-width="1.5" />
+  <style>
+    @keyframes cursorBlink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    @keyframes wfGlow {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; }
+    }
+    .wf-cursor { animation: cursorBlink 1.2s infinite; }
+    .wf-aura { animation: wfGlow 5s ease-in-out infinite alternate; }
+  </style>
+
+  <!-- Base Canvas -->
+  <rect x="0" y="0" width="920" height="220" rx="18" fill="#071a19" />
+
+  <!-- Outer Frame: Aura Glow & Gradient Border -->
+  <rect x="1" y="1" width="918" height="218" rx="18" fill="url(#wfOuterGrad)" stroke="#2dd4bf" stroke-width="1.5" stroke-opacity="0.35" />
+  <rect class="wf-aura" x="1" y="1" width="918" height="218" rx="18" fill="url(#wfAuraRadial)" />
+
+  <!-- Inner Recessed Panel (14px inset, 88% dark fill, 20% teal border) -->
+  <rect x="14" y="14" width="892" height="192" rx="12" fill="#061414" fill-opacity="0.88" stroke="#2dd4bf" stroke-width="1" stroke-opacity="0.20" />
 
   <!-- Terminal Top Bar -->
-  <rect x="1" y="1" width="918" height="36" rx="14" fill="#071a19" stroke="#134e4a" stroke-width="1" />
-  <rect x="1" y="22" width="918" height="14" fill="#071a19" />
-  <line x1="1" y1="36" x2="919" y2="36" stroke="#134e4a" stroke-width="1" />
+  <rect x="14" y="14" width="892" height="34" rx="12" fill="#082220" />
+  <rect x="14" y="32" width="892" height="16" fill="#082220" />
+  <line x1="14" y1="48" x2="906" y2="48" stroke="#134e4a" stroke-width="1" />
 
-  <circle cx="24" cy="18" r="5.5" fill="#ef4444" />
-  <circle cx="42" cy="18" r="5.5" fill="#eab308" />
-  <circle cx="60" cy="18" r="5.5" fill="#22c55e" />
+  <!-- Mac Control Dots -->
+  <circle cx="34" cy="31" r="5" fill="#ef4444" />
+  <circle cx="50" cy="31" r="5" fill="#eab308" />
+  <circle cx="66" cy="31" r="5" fill="#22c55e" />
 
-  <text x="460" y="23" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" fill="#64748b" font-weight="500">justakshaay@pipeline:~/beyond-the-code --inspect</text>
+  <!-- Command line with Blinking Terminal Cursor -->
+  <text x="460" y="35" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="12" fill="#64748b" font-weight="600">justakshaay@pipeline:~/beyond-the-code --inspect <tspan class="wf-cursor" fill="#2dd4bf">_</tspan></text>
 
   <!-- 5 Workflow Steps -->
   <!-- Step 1: DESIGN -->
-  <g transform="translate(22, 54)">
-    <rect width="158" height="116" rx="8" fill="url(#stepBg)" stroke="#115e59" stroke-width="1" />
-    <text x="14" y="26" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#2dd4bf">01 // DESIGN</text>
-    <text x="14" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#e2e8f0" font-weight="600">Understand problem</text>
-    <text x="14" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">before writing</text>
-    <text x="14" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">any system code.</text>
+  <g transform="translate(28, 62)">
+    <rect width="156" height="106" rx="8" fill="url(#wfStepBg)" stroke="#115e59" stroke-width="1" />
+    <rect x="0" y="0" width="3" height="106" rx="1.5" fill="#2dd4bf" />
+    <text x="12" y="24" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#2dd4bf">01 // DESIGN</text>
+    <text x="12" y="50" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#e2e8f0" font-weight="600">Understand problem</text>
+    <text x="12" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">before writing</text>
+    <text x="12" y="86" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">system code.</text>
   </g>
 
   <!-- Arrow 1 -->
-  <text x="191" y="116" text-anchor="middle" font-family="monospace" font-size="16" fill="#2dd4bf" font-weight="bold">→</text>
+  <text x="194" y="120" text-anchor="middle" font-family="monospace" font-size="16" fill="#2dd4bf" font-weight="bold">→</text>
 
   <!-- Step 2: ENGINEER -->
-  <g transform="translate(202, 54)">
-    <rect width="158" height="116" rx="8" fill="url(#stepBg)" stroke="#115e59" stroke-width="1" />
-    <text x="14" y="26" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#2dd4bf">02 // ENGINEER</text>
-    <text x="14" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#e2e8f0" font-weight="600">Build with purpose</text>
-    <text x="14" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">structure, stability,</text>
-    <text x="14" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">&amp; maintainability.</text>
+  <g transform="translate(204, 62)">
+    <rect width="156" height="106" rx="8" fill="url(#wfStepBg)" stroke="#115e59" stroke-width="1" />
+    <rect x="0" y="0" width="3" height="106" rx="1.5" fill="#2dd4bf" />
+    <text x="12" y="24" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#2dd4bf">02 // ENGINEER</text>
+    <text x="12" y="50" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#e2e8f0" font-weight="600">Build with purpose</text>
+    <text x="12" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">structure, stability,</text>
+    <text x="12" y="86" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">&amp; maintainability.</text>
   </g>
 
   <!-- Arrow 2 -->
-  <text x="371" y="116" text-anchor="middle" font-family="monospace" font-size="16" fill="#2dd4bf" font-weight="bold">→</text>
+  <text x="370" y="120" text-anchor="middle" font-family="monospace" font-size="16" fill="#2dd4bf" font-weight="bold">→</text>
 
   <!-- Step 3: EXPERIMENT -->
-  <g transform="translate(382, 54)">
-    <rect width="158" height="116" rx="8" fill="url(#stepBg)" stroke="#115e59" stroke-width="1" />
-    <text x="14" y="26" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#2dd4bf">03 // EXPERIMENT</text>
-    <text x="14" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#e2e8f0" font-weight="600">Explore new ideas</text>
-    <text x="14" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">beyond standard</text>
-    <text x="14" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">preset boundaries.</text>
+  <g transform="translate(380, 62)">
+    <rect width="156" height="106" rx="8" fill="url(#wfStepBg)" stroke="#115e59" stroke-width="1" />
+    <rect x="0" y="0" width="3" height="106" rx="1.5" fill="#2dd4bf" />
+    <text x="12" y="24" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#2dd4bf">03 // EXPERIMENT</text>
+    <text x="12" y="50" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#e2e8f0" font-weight="600">Explore new ideas</text>
+    <text x="12" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">beyond standard</text>
+    <text x="12" y="86" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">preset bounds.</text>
   </g>
 
   <!-- Arrow 3 -->
-  <text x="551" y="116" text-anchor="middle" font-family="monospace" font-size="16" fill="#2dd4bf" font-weight="bold">→</text>
+  <text x="546" y="120" text-anchor="middle" font-family="monospace" font-size="16" fill="#2dd4bf" font-weight="bold">→</text>
 
   <!-- Step 4: ITERATE -->
-  <g transform="translate(562, 54)">
-    <rect width="158" height="116" rx="8" fill="url(#stepBg)" stroke="#115e59" stroke-width="1" />
-    <text x="14" y="26" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#2dd4bf">04 // ITERATE</text>
-    <text x="14" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#e2e8f0" font-weight="600">Refine and test</text>
-    <text x="14" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">through rigorous</text>
-    <text x="14" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">feedback loops.</text>
+  <g transform="translate(556, 62)">
+    <rect width="156" height="106" rx="8" fill="url(#wfStepBg)" stroke="#115e59" stroke-width="1" />
+    <rect x="0" y="0" width="3" height="106" rx="1.5" fill="#2dd4bf" />
+    <text x="12" y="24" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#2dd4bf">04 // ITERATE</text>
+    <text x="12" y="50" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#e2e8f0" font-weight="600">Refine and test</text>
+    <text x="12" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">through rigorous</text>
+    <text x="12" y="86" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">feedback loops.</text>
   </g>
 
   <!-- Arrow 4 -->
-  <text x="731" y="116" text-anchor="middle" font-family="monospace" font-size="16" fill="#2dd4bf" font-weight="bold">→</text>
+  <text x="722" y="120" text-anchor="middle" font-family="monospace" font-size="16" fill="#2dd4bf" font-weight="bold">→</text>
 
   <!-- Step 5: SHIP -->
-  <g transform="translate(742, 54)">
-    <rect width="158" height="116" rx="8" fill="url(#stepBg)" stroke="#115e59" stroke-width="1" />
-    <text x="14" y="26" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#2dd4bf">05 // SHIP</text>
-    <text x="14" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#e2e8f0" font-weight="600">Deliver practical</text>
-    <text x="14" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">working software</text>
-    <text x="14" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">into production.</text>
+  <g transform="translate(732, 62)">
+    <rect width="156" height="106" rx="8" fill="url(#wfStepBg)" stroke="#115e59" stroke-width="1" />
+    <rect x="0" y="0" width="3" height="106" rx="1.5" fill="#2dd4bf" />
+    <text x="12" y="24" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#2dd4bf">05 // SHIP</text>
+    <text x="12" y="50" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#e2e8f0" font-weight="600">Deliver practical</text>
+    <text x="12" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">working systems</text>
+    <text x="12" y="86" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#94a3b8">into production.</text>
   </g>
 
   <!-- Footer Pipeline Status -->
-  <text x="460" y="198" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#2dd4bf" letter-spacing="1.5px">[PIPELINE STATUS: ACTIVE] · [BUILD: CONTINUOUS] · [STANDARD: HIGH RIGOR]</text>
+  <text x="460" y="192" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10.5" fill="#2dd4bf" letter-spacing="1.5px">[PIPELINE STATUS: ACTIVE] · [BUILD: CONTINUOUS] · [STANDARD: HIGH RIGOR]</text>
 </svg>

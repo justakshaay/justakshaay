@@ -2,12 +2,12 @@
 
 <!-- Hero Identity Card -->
 <p align="center">
-  <img src="./assets/hero-card.svg" width="100%" alt="Akshay Rajput — Software Developer & AI/ML Engineer" />
+  <img src="./assets/hero-card.svg" width="100%" alt="Akshay Kumar — Software Developer & AI/ML Engineer" />
 </p>
 
 <!-- Monospace Terminal Banner -->
 <p align="center">
-  <img src="./assets/ascii-banner.svg" width="100%" alt="Akshay Rajput Terminal Banner" />
+  <img src="./assets/ascii-banner.svg" width="100%" alt="Akshay Kumar Terminal Banner" />
 </p>
 
 <p align="center">
@@ -20,13 +20,6 @@
 
 <p align="center">
   <sub>I build software at the intersection of engineering, intelligence, and creativity. My work spans full-stack applications, machine learning models, intelligent systems, and end-to-end software development. I enjoy taking ideas beyond the conceptual stage and turning them into functional, practical solutions.</sub>
-</p>
-
-<p align="center">
-  <a href="https://github.com/justakshaay">GitHub</a> ·
-  <a href="https://www.linkedin.com/in/akshay-kumar-2472b6381/">LinkedIn</a> ·
-  <a href="https://www.instagram.com/justakshaay">Instagram</a> ·
-  <a href="mailto:akshaykkumar2006@gmail.com">Email</a>
 </p>
 
 <p align="center">──────── ◇ ────────</p>
@@ -112,9 +105,6 @@
         <img src="https://img.shields.io/badge/Autonomous_Nav-0d2624?style=flat-square&logoColor=2dd4bf" alt="Nav" />
         <img src="https://img.shields.io/badge/Aerospace-0d2624?style=flat-square&logoColor=2dd4bf" alt="Aerospace" />
       </p>
-      <p>
-        <a href="https://github.com/justakshaay/NAVIS-Networked-Adaptive-Visual-Intelligent-Space-Navigation-Sounds-like-a-real-aerospace-system"><strong>📂 View Repository</strong></a>
-      </p>
     </td>
     <td width="50%" valign="top">
       <code>Full-Stack · FinTech</code>
@@ -124,9 +114,6 @@
         <img src="https://img.shields.io/badge/Full--Stack-0d2624?style=flat-square&logoColor=2dd4bf" alt="Full-Stack" />
         <img src="https://img.shields.io/badge/Finance_Engine-0d2624?style=flat-square&logoColor=2dd4bf" alt="FinTech" />
         <img src="https://img.shields.io/badge/Web_App-0d2624?style=flat-square&logoColor=2dd4bf" alt="Web" />
-      </p>
-      <p>
-        <a href="https://github.com/justakshaay/walletsync"><strong>📂 View Repository</strong></a>
       </p>
     </td>
   </tr>
@@ -141,7 +128,6 @@
         <img src="https://img.shields.io/badge/Vercel-0d2624?style=flat-square&logo=vercel&logoColor=2dd4bf" alt="Vercel" />
       </p>
       <p>
-        <a href="https://github.com/justakshaay/hierarchy-explorer"><strong>📂 View Repository</strong></a> ·
         <a href="https://hierarchy-explorer-nine.vercel.app"><strong>🚀 Live Demo</strong></a>
       </p>
     </td>
@@ -153,9 +139,6 @@
         <img src="https://img.shields.io/badge/Python-0d2624?style=flat-square&logo=python&logoColor=2dd4bf" alt="Python" />
         <img src="https://img.shields.io/badge/Security_Audit-0d2624?style=flat-square&logoColor=2dd4bf" alt="Security" />
         <img src="https://img.shields.io/badge/CLI_Tool-0d2624?style=flat-square&logoColor=2dd4bf" alt="CLI" />
-      </p>
-      <p>
-        <a href="https://github.com/justakshaay/PassForge"><strong>📂 View Repository</strong></a>
       </p>
     </td>
   </tr>
@@ -169,9 +152,6 @@
         <img src="https://img.shields.io/badge/Automation-0d2624?style=flat-square&logoColor=2dd4bf" alt="Automation" />
         <img src="https://img.shields.io/badge/Media_Engine-0d2624?style=flat-square&logoColor=2dd4bf" alt="Media" />
       </p>
-      <p>
-        <a href="https://github.com/justakshaay/TubeVault"><strong>📂 View Repository</strong></a>
-      </p>
     </td>
     <td width="50%" valign="top">
       <code>Python · ML · Data Science</code>
@@ -181,9 +161,6 @@
         <img src="https://img.shields.io/badge/Jupyter-0d2624?style=flat-square&logo=jupyter&logoColor=2dd4bf" alt="Jupyter" />
         <img src="https://img.shields.io/badge/Scikit--Learn-0d2624?style=flat-square&logo=scikitlearn&logoColor=2dd4bf" alt="Scikit-Learn" />
         <img src="https://img.shields.io/badge/Data_Science-0d2624?style=flat-square&logoColor=2dd4bf" alt="Data Science" />
-      </p>
-      <p>
-        <a href="https://github.com/justakshaay/MachineLearning"><strong>📂 View Repository</strong></a>
       </p>
     </td>
   </tr>
@@ -249,15 +226,15 @@
 
 <p align="center">
   <a href="https://github.com/justakshaay">
-    <img src="https://img.shields.io/badge/GitHub-@justakshaay-071a19?style=for-the-badge&logo=github&logoColor=2dd4bf&labelColor=051514" alt="GitHub" />
+    <img src="https://img.shields.io/badge/GitHub-071a19?style=for-the-badge&logo=github&logoColor=2dd4bf" alt="GitHub" />
   </a>
   <a href="https://www.linkedin.com/in/akshay-kumar-2472b6381/">
-    <img src="https://img.shields.io/badge/LinkedIn-Akshay_Kumar-071a19?style=for-the-badge&logo=data%3Aimage/svg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iIzJkZDRiZiIgZD0iTTE5IDNhMiAyIDAgMCAxIDIgMnYxNGEyIDIgMCAwIDEtMiAySDVhMiAyIDAgMCAxLTItMlY1YTIgMiAwIDAgMSAyLTJoMTRtLS41IDE1LjV2LTUuM2EzLjI2IDMuMjYgMCAwIDAtMy4yNi0zLjI2Yy0uODUgMC0xLjg0LjUyLTIuMjggMS4zdi0xLjExaC0yLjc5djguMzdoMi43OXYtNC45M2MwLS43Ny42Mi0xLjQgMS4zOS0xLjRhMS40IDEuNCAwIDAgMSAxLjQgMS40djQuOTNoMi43NU02LjQ2IDEwLjloMi43OXY4LjM3SDYuNDZ2LTguMzdNNy44NiA2Ljg4YTEuNDUgMS40NSAwIDAgMC0xLjQ1IDEuNDVjMCAuOC42NSAxLjQ1IDEuNDUgMS40NXMxLjQ1LS42NSAxLjQ1LTEuNDVjMC0uOC0uNjUtMS40NS0xLjQ1LTEuNDVaIi8%2BPC9zdmc%2B&labelColor=051514" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/LinkedIn-071a19?style=for-the-badge&logo=data%3Aimage/svg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iIzJkZDRiZiIgZD0iTTE5IDNhMiAyIDAgMCAxIDIgMnYxNGEyIDIgMCAwIDEtMiAySDVhMiAyIDAgMCAxLTItMlY1YTIgMiAwIDAgMSAyLTJoMTRtLS41IDE1LjV2LTUuM2EzLjI2IDMuMjYgMCAwIDAtMy4yNi0zLjI2Yy0uODUgMC0xLjg0LjUyLTIuMjggMS4zdi0xLjExaC0yLjc5djguMzdoMi43OXYtNC45M2MwLS43Ny42Mi0xLjQgMS4zOS0xLjRhMS40IDEuNCAwIDAgMSAxLjQgMS40djQuOTNoMi43NU02LjQ2IDEwLjloMi43OXY4LjM3SDYuNDZ2LTguMzdNNy44NiA2Ljg4YTEuNDUgMS40NSAwIDAgMC0xLjQ1IDEuNDVjMCAuOC42NSAxLjQ1IDEuNDUgMS40NXMxLjQ1LS42NSAxLjQ1LTEuNDVjMC0uOC0uNjUtMS40NS0xLjQ1LTEuNDVaIi8%2BPC9zdmc%2B&logoColor=2dd4bf" alt="LinkedIn" />
   </a>
-  <a href="https://www.instagram.com/justakshaay">
-    <img src="https://img.shields.io/badge/Instagram-@justakshaay-071a19?style=for-the-badge&logo=instagram&logoColor=2dd4bf&labelColor=051514" alt="Instagram" />
+  <a href="https://www.instagram.com/justakshaay/">
+    <img src="https://img.shields.io/badge/Instagram-071a19?style=for-the-badge&logo=instagram&logoColor=2dd4bf" alt="Instagram" />
   </a>
   <a href="mailto:akshaykkumar2006@gmail.com">
-    <img src="https://img.shields.io/badge/Email-Say_Hello-071a19?style=for-the-badge&logo=gmail&logoColor=2dd4bf&labelColor=051514" alt="Email" />
+    <img src="https://img.shields.io/badge/Email-071a19?style=for-the-badge&logo=gmail&logoColor=2dd4bf" alt="Email" />
   </a>
 </p>
