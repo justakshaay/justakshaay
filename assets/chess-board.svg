@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg"
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
      viewBox="0 0 480 480" width="480" height="480">
   <defs>
     <radialGradient id="outerGlow" cx="50%" cy="50%" r="60%">
@@ -14,87 +14,93 @@
     </linearGradient>
     <!-- White piece glow: cyan halo -->
     <filter id="wGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
-      <feFlood flood-color="#22d3ee" flood-opacity="0.65" result="color"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2.5" result="blur"/>
+      <feFlood flood-color="#22d3ee" flood-opacity="0.60" result="color"/>
       <feComposite in="color" in2="blur" operator="in" result="glow"/>
       <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <!-- Black piece glow: teal halo -->
     <filter id="bGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="2.5" result="blur"/>
-      <feFlood flood-color="#14b8a6" flood-opacity="0.55" result="color"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2.0" result="blur"/>
+      <feFlood flood-color="#14b8a6" flood-opacity="0.50" result="color"/>
       <feComposite in="color" in2="blur" operator="in" result="glow"/>
       <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <path id="p-P" d="M -9,12 L 9,12 C 7,12 7,9 5,9 C 4,9 4,4 5,2 C 7,1 8,-1 8,-4 C 8,-8 4,-11 0,-11 C -4,-11 -8,-8 -8,-4 C -8,-1 -7,1 -5,2 C -4,4 -4,9 -5,9 C -7,9 -7,12 -9,12 Z"/>
+    <path id="p-R" d="M -10,12 L 10,12 C 8,12 8,9 6,9 L 6,-4 L 9,-4 L 9,-12 L 5,-12 L 5,-8 L 2,-8 L 2,-12 L -2,-12 L -2,-8 L -5,-8 L -5,-12 L -9,-12 L -9,-4 L -6,-4 L -6,9 C -8,9 -8,12 -10,12 Z"/>
+    <path id="p-N" d="M -10,12 L 10,12 C 8,12 8,9 6,9 C 6,7 8,5 9,1 C 10,-3 9,-7 7,-10 C 6,-12 4,-13 2,-13 C 0,-13 0,-11 -2,-9 C -3,-9 -6,-7 -9,-5 C -11,-3 -10,0 -8,1 C -6,2 -5,4 -5,9 C -7,9 -7,12 -10,12 Z"/>
+    <path id="p-B" d="M -10,12 L 10,12 C 8,12 8,9 5,9 C 4,7 5,3 6,0 C 7,-4 7,-8 4,-11 C 3,-12 1,-12 1,-14 C 1,-15 0,-15 0,-14 C 0,-12 -2,-12 -3,-11 C -6,-8 -6,-4 -5,0 C -4,3 -3,7 -4,9 C -7,9 -7,12 -10,12 Z"/>
+    <path id="p-Q" d="M -11,12 L 11,12 C 9,12 8,9 5,9 L 9,-2 L 9,-10 L 5,-6 L 0,-13 L -5,-6 L -9,-10 L -9,-2 L -5,9 C -8,9 -9,12 -11,12 Z"/>
+    <path id="p-K" d="M -11,12 L 11,12 C 9,12 8,9 6,9 C 7,6 8,1 7,-3 C 6,-6 4,-7 2,-8 L 2,-10 L 4,-10 L 4,-12 L 2,-12 L 2,-14 L -2,-14 L -2,-12 L -4,-12 L -4,-10 L -2,-10 L -2,-8 C -4,-7 -6,-6 -7,-3 C -8,1 -7,6 -6,9 C -8,9 -9,12 -11,12 Z"/>
   </defs>
 
   <style>
 @keyframes glowPulse { 0%,100% { opacity:0.55; } 50% { opacity:0.9; } }
 .gp { animation: glowPulse 3.5s ease-in-out infinite; }
-@keyframes mv-wp {
+    @keyframes kf-e2-e4 {
       0%   { transform: translate(0px, 0px); }
-      40%  { transform: translate(0px, -100px); }
-      55%  { transform: translate(0px, -100px); }
+      40%  { transform: translate(0px, -96px); }
+      55%  { transform: translate(0px, -96px); }
       90%  { transform: translate(0px, 0px); }
       100% { transform: translate(0px, 0px); }
     }
-    #a-wp {
-      animation: mv-wp 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+    .move-e2-e4 {
+      animation: kf-e2-e4 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
       animation-delay: 0s;
     }
-@keyframes mv-bp {
+    @keyframes kf-e7-e5 {
       0%   { transform: translate(0px, 0px); }
-      40%  { transform: translate(0px, 100px); }
-      55%  { transform: translate(0px, 100px); }
+      40%  { transform: translate(0px, 96px); }
+      55%  { transform: translate(0px, 96px); }
       90%  { transform: translate(0px, 0px); }
       100% { transform: translate(0px, 0px); }
     }
-    #a-bp {
-      animation: mv-bp 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+    .move-e7-e5 {
+      animation: kf-e7-e5 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
       animation-delay: -1.4s;
     }
-@keyframes mv-wn {
+    @keyframes kf-g1-f3 {
       0%   { transform: translate(0px, 0px); }
-      40%  { transform: translate(-50px, -100px); }
-      55%  { transform: translate(-50px, -100px); }
+      40%  { transform: translate(-48px, -96px); }
+      55%  { transform: translate(-48px, -96px); }
       90%  { transform: translate(0px, 0px); }
       100% { transform: translate(0px, 0px); }
     }
-    #a-wn {
-      animation: mv-wn 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+    .move-g1-f3 {
+      animation: kf-g1-f3 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
       animation-delay: -2.8s;
     }
-@keyframes mv-bn {
+    @keyframes kf-b8-c6 {
       0%   { transform: translate(0px, 0px); }
-      40%  { transform: translate(50px, 100px); }
-      55%  { transform: translate(50px, 100px); }
+      40%  { transform: translate(48px, 96px); }
+      55%  { transform: translate(48px, 96px); }
       90%  { transform: translate(0px, 0px); }
       100% { transform: translate(0px, 0px); }
     }
-    #a-bn {
-      animation: mv-bn 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+    .move-b8-c6 {
+      animation: kf-b8-c6 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
       animation-delay: -4.2s;
     }
-@keyframes mv-wb {
+    @keyframes kf-f1-c4 {
       0%   { transform: translate(0px, 0px); }
-      40%  { transform: translate(-150px, -150px); }
-      55%  { transform: translate(-150px, -150px); }
+      40%  { transform: translate(-144px, -144px); }
+      55%  { transform: translate(-144px, -144px); }
       90%  { transform: translate(0px, 0px); }
       100% { transform: translate(0px, 0px); }
     }
-    #a-wb {
-      animation: mv-wb 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+    .move-f1-c4 {
+      animation: kf-f1-c4 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
       animation-delay: -5.6s;
     }
-@keyframes mv-bb {
+    @keyframes kf-f8-c5 {
       0%   { transform: translate(0px, 0px); }
-      40%  { transform: translate(-150px, 150px); }
-      55%  { transform: translate(-150px, 150px); }
+      40%  { transform: translate(-144px, 144px); }
+      55%  { transform: translate(-144px, 144px); }
       90%  { transform: translate(0px, 0px); }
       100% { transform: translate(0px, 0px); }
     }
-    #a-bb {
-      animation: mv-bb 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+    .move-f8-c5 {
+      animation: kf-f8-c5 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
       animation-delay: -7.0s;
     }
   </style>
@@ -108,131 +114,207 @@
   <rect x="14.5" y="14.5" width="451" height="451" rx="14"
         fill="none" stroke="#2dd4bf" stroke-width="1" stroke-opacity="0.22"/>
 
-  <!-- ── Chess Board ── -->
+  <!-- ── Chess Board (384x384, Centered) ── -->
   <g id="board">
-    <rect x="42" y="376" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="42" y="326" width="50" height="50" fill="#165a5c"/>
-    <rect x="42" y="276" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="42" y="226" width="50" height="50" fill="#165a5c"/>
-    <rect x="42" y="176" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="42" y="126" width="50" height="50" fill="#165a5c"/>
-    <rect x="42" y="76" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="42" y="26" width="50" height="50" fill="#165a5c"/>
-    <rect x="92" y="376" width="50" height="50" fill="#165a5c"/>
-    <rect x="92" y="326" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="92" y="276" width="50" height="50" fill="#165a5c"/>
-    <rect x="92" y="226" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="92" y="176" width="50" height="50" fill="#165a5c"/>
-    <rect x="92" y="126" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="92" y="76" width="50" height="50" fill="#165a5c"/>
-    <rect x="92" y="26" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="142" y="376" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="142" y="326" width="50" height="50" fill="#165a5c"/>
-    <rect x="142" y="276" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="142" y="226" width="50" height="50" fill="#165a5c"/>
-    <rect x="142" y="176" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="142" y="126" width="50" height="50" fill="#165a5c"/>
-    <rect x="142" y="76" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="142" y="26" width="50" height="50" fill="#165a5c"/>
-    <rect x="192" y="376" width="50" height="50" fill="#165a5c"/>
-    <rect x="192" y="326" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="192" y="276" width="50" height="50" fill="#165a5c"/>
-    <rect x="192" y="226" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="192" y="176" width="50" height="50" fill="#165a5c"/>
-    <rect x="192" y="126" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="192" y="76" width="50" height="50" fill="#165a5c"/>
-    <rect x="192" y="26" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="242" y="376" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="242" y="326" width="50" height="50" fill="#165a5c"/>
-    <rect x="242" y="276" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="242" y="226" width="50" height="50" fill="#165a5c"/>
-    <rect x="242" y="176" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="242" y="126" width="50" height="50" fill="#165a5c"/>
-    <rect x="242" y="76" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="242" y="26" width="50" height="50" fill="#165a5c"/>
-    <rect x="292" y="376" width="50" height="50" fill="#165a5c"/>
-    <rect x="292" y="326" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="292" y="276" width="50" height="50" fill="#165a5c"/>
-    <rect x="292" y="226" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="292" y="176" width="50" height="50" fill="#165a5c"/>
-    <rect x="292" y="126" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="292" y="76" width="50" height="50" fill="#165a5c"/>
-    <rect x="292" y="26" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="342" y="376" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="342" y="326" width="50" height="50" fill="#165a5c"/>
-    <rect x="342" y="276" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="342" y="226" width="50" height="50" fill="#165a5c"/>
-    <rect x="342" y="176" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="342" y="126" width="50" height="50" fill="#165a5c"/>
-    <rect x="342" y="76" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="342" y="26" width="50" height="50" fill="#165a5c"/>
-    <rect x="392" y="376" width="50" height="50" fill="#165a5c"/>
-    <rect x="392" y="326" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="392" y="276" width="50" height="50" fill="#165a5c"/>
-    <rect x="392" y="226" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="392" y="176" width="50" height="50" fill="#165a5c"/>
-    <rect x="392" y="126" width="50" height="50" fill="#0c3b3d"/>
-    <rect x="392" y="76" width="50" height="50" fill="#165a5c"/>
-    <rect x="392" y="26" width="50" height="50" fill="#0c3b3d"/>
+    <rect x="48" y="48" width="48" height="48" fill="#165a5c"/>
+    <rect x="96" y="48" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="144" y="48" width="48" height="48" fill="#165a5c"/>
+    <rect x="192" y="48" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="240" y="48" width="48" height="48" fill="#165a5c"/>
+    <rect x="288" y="48" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="336" y="48" width="48" height="48" fill="#165a5c"/>
+    <rect x="384" y="48" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="48" y="96" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="96" y="96" width="48" height="48" fill="#165a5c"/>
+    <rect x="144" y="96" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="192" y="96" width="48" height="48" fill="#165a5c"/>
+    <rect x="240" y="96" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="288" y="96" width="48" height="48" fill="#165a5c"/>
+    <rect x="336" y="96" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="384" y="96" width="48" height="48" fill="#165a5c"/>
+    <rect x="48" y="144" width="48" height="48" fill="#165a5c"/>
+    <rect x="96" y="144" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="144" y="144" width="48" height="48" fill="#165a5c"/>
+    <rect x="192" y="144" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="240" y="144" width="48" height="48" fill="#165a5c"/>
+    <rect x="288" y="144" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="336" y="144" width="48" height="48" fill="#165a5c"/>
+    <rect x="384" y="144" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="48" y="192" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="96" y="192" width="48" height="48" fill="#165a5c"/>
+    <rect x="144" y="192" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="192" y="192" width="48" height="48" fill="#165a5c"/>
+    <rect x="240" y="192" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="288" y="192" width="48" height="48" fill="#165a5c"/>
+    <rect x="336" y="192" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="384" y="192" width="48" height="48" fill="#165a5c"/>
+    <rect x="48" y="240" width="48" height="48" fill="#165a5c"/>
+    <rect x="96" y="240" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="144" y="240" width="48" height="48" fill="#165a5c"/>
+    <rect x="192" y="240" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="240" y="240" width="48" height="48" fill="#165a5c"/>
+    <rect x="288" y="240" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="336" y="240" width="48" height="48" fill="#165a5c"/>
+    <rect x="384" y="240" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="48" y="288" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="96" y="288" width="48" height="48" fill="#165a5c"/>
+    <rect x="144" y="288" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="192" y="288" width="48" height="48" fill="#165a5c"/>
+    <rect x="240" y="288" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="288" y="288" width="48" height="48" fill="#165a5c"/>
+    <rect x="336" y="288" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="384" y="288" width="48" height="48" fill="#165a5c"/>
+    <rect x="48" y="336" width="48" height="48" fill="#165a5c"/>
+    <rect x="96" y="336" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="144" y="336" width="48" height="48" fill="#165a5c"/>
+    <rect x="192" y="336" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="240" y="336" width="48" height="48" fill="#165a5c"/>
+    <rect x="288" y="336" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="336" y="336" width="48" height="48" fill="#165a5c"/>
+    <rect x="384" y="336" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="48" y="384" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="96" y="384" width="48" height="48" fill="#165a5c"/>
+    <rect x="144" y="384" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="192" y="384" width="48" height="48" fill="#165a5c"/>
+    <rect x="240" y="384" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="288" y="384" width="48" height="48" fill="#165a5c"/>
+    <rect x="336" y="384" width="48" height="48" fill="#0c3b3d"/>
+    <rect x="384" y="384" width="48" height="48" fill="#165a5c"/>
   </g>
 
   <!-- Board border -->
-  <rect x="42" y="26" width="400" height="400"
-        fill="none" stroke="#2dd4bf" stroke-width="0.6" stroke-opacity="0.3"/>
+  <rect x="48" y="48" width="384" height="384"
+        fill="none" stroke="#2dd4bf" stroke-width="0.8" stroke-opacity="0.35"/>
 
   <!-- ── Coordinate Labels ── -->
   <g id="coords">
-    <text x="27" y="405" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">1</text>
-    <text x="27" y="355" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">2</text>
-    <text x="27" y="305" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">3</text>
-    <text x="27" y="255" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">4</text>
-    <text x="27" y="205" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">5</text>
-    <text x="27" y="155" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">6</text>
-    <text x="27" y="105" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">7</text>
-    <text x="27" y="55" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">8</text>
-    <text x="67" y="444" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">a</text>
-    <text x="117" y="444" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">b</text>
-    <text x="167" y="444" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">c</text>
-    <text x="217" y="444" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">d</text>
-    <text x="267" y="444" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">e</text>
-    <text x="317" y="444" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">f</text>
-    <text x="367" y="444" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">g</text>
-    <text x="417" y="444" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">h</text>
+    <text x="32" y="76" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">8</text>
+    <text x="32" y="124" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">7</text>
+    <text x="32" y="172" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">6</text>
+    <text x="32" y="220" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">5</text>
+    <text x="32" y="268" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">4</text>
+    <text x="32" y="316" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">3</text>
+    <text x="32" y="364" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">2</text>
+    <text x="32" y="412" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">1</text>
+    <text x="72" y="452" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">a</text>
+    <text x="120" y="452" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">b</text>
+    <text x="168" y="452" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">c</text>
+    <text x="216" y="452" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">d</text>
+    <text x="264" y="452" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">e</text>
+    <text x="312" y="452" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">f</text>
+    <text x="360" y="452" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">g</text>
+    <text x="408" y="452" font-family="'Courier New',Courier,monospace" font-size="11" fill="#5eead4" text-anchor="middle">h</text>
   </g>
 
-  <!-- ── Chess Pieces (Static pieces first, then animated pieces in front) ── -->
+  <!-- ── Chess Pieces (Static pieces first, animated pieces in front) ── -->
   <g id="pieces">
-    <g transform="translate(67,401)"><g filter="url(#wGlow)"><path d="M -12,2 L 12,2 L 12,-2 L 9,-2 L 9,-12 L 12,-12 L 12,-17 L 7,-17 L 7,-14 L 2,-14 L 2,-17 L -2,-17 L -2,-14 L -7,-14 L -7,-17 L -12,-17 L -12,-12 L -9,-12 L -9,-2 L -12,-2 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(117,401)"><g filter="url(#wGlow)"><path d="M -12,2 L 12,2 L 12,-2 L 9,-2 L 9,-4 C 12,-6 13,-10 11,-14 C 10,-17 7,-20 4,-21 C 5,-22 6,-24 4,-25 C 2,-26 0,-25 -1,-23 C -2,-21 -4,-20 -6,-19 C -10,-18 -12,-14 -12,-9 L -12,-2 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(167,401)"><g filter="url(#wGlow)"><path d="M 0,-23 C -1,-26 1,-26 0,-23 C -3,-20 -5,-16 -5,-11 C -7,-9 -9,-6 -9,-2 L -12,-2 L -12,2 L 12,2 L 12,-2 L 9,-2 C 9,-6 7,-9 5,-11 C 5,-16 3,-20 0,-23 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(217,401)"><g filter="url(#wGlow)"><path d="M -13,2 L 13,2 L 13,-2 L 10,-2 C 10,-6 8,-10 6,-12 L 9,-19 L 6,-22 L 3,-16 L 0,-21 L -3,-16 L -6,-22 L -9,-19 L -6,-12 C -8,-10 -10,-6 -10,-2 L -13,-2 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(267,401)"><g filter="url(#wGlow)"><path d="M -13,2 L 13,2 L 13,-2 L 10,-2 C 10,-7 8,-11 5,-14 L -5,-14 C -8,-11 -10,-7 -10,-2 L -13,-2 Z M -2,-14 L -2,-20 L -5,-20 L -5,-23 L -2,-23 L -2,-28 L 2,-28 L 2,-23 L 5,-23 L 5,-20 L 2,-20 L 2,-14 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(417,401)"><g filter="url(#wGlow)"><path d="M -12,2 L 12,2 L 12,-2 L 9,-2 L 9,-12 L 12,-12 L 12,-17 L 7,-17 L 7,-14 L 2,-14 L 2,-17 L -2,-17 L -2,-14 L -7,-14 L -7,-17 L -12,-17 L -12,-12 L -9,-12 L -9,-2 L -12,-2 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(67,351)"><g filter="url(#wGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(117,351)"><g filter="url(#wGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(167,351)"><g filter="url(#wGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(217,351)"><g filter="url(#wGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(317,351)"><g filter="url(#wGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(367,351)"><g filter="url(#wGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(417,351)"><g filter="url(#wGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(67,101)"><g filter="url(#bGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(117,101)"><g filter="url(#bGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(167,101)"><g filter="url(#bGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(217,101)"><g filter="url(#bGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(317,101)"><g filter="url(#bGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(367,101)"><g filter="url(#bGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(417,101)"><g filter="url(#bGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(67,51)"><g filter="url(#bGlow)"><path d="M -12,2 L 12,2 L 12,-2 L 9,-2 L 9,-12 L 12,-12 L 12,-17 L 7,-17 L 7,-14 L 2,-14 L 2,-17 L -2,-17 L -2,-14 L -7,-14 L -7,-17 L -12,-17 L -12,-12 L -9,-12 L -9,-2 L -12,-2 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(167,51)"><g filter="url(#bGlow)"><path d="M 0,-23 C -1,-26 1,-26 0,-23 C -3,-20 -5,-16 -5,-11 C -7,-9 -9,-6 -9,-2 L -12,-2 L -12,2 L 12,2 L 12,-2 L 9,-2 C 9,-6 7,-9 5,-11 C 5,-16 3,-20 0,-23 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(217,51)"><g filter="url(#bGlow)"><path d="M -13,2 L 13,2 L 13,-2 L 10,-2 C 10,-6 8,-10 6,-12 L 9,-19 L 6,-22 L 3,-16 L 0,-21 L -3,-16 L -6,-22 L -9,-19 L -6,-12 C -8,-10 -10,-6 -10,-2 L -13,-2 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(267,51)"><g filter="url(#bGlow)"><path d="M -13,2 L 13,2 L 13,-2 L 10,-2 C 10,-7 8,-11 5,-14 L -5,-14 C -8,-11 -10,-7 -10,-2 L -13,-2 Z M -2,-14 L -2,-20 L -5,-20 L -5,-23 L -2,-23 L -2,-28 L 2,-28 L 2,-23 L 5,-23 L 5,-20 L 2,-20 L 2,-14 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(367,51)"><g filter="url(#bGlow)"><path d="M -12,2 L 12,2 L 12,-2 L 9,-2 L 9,-4 C 12,-6 13,-10 11,-14 C 10,-17 7,-20 4,-21 C 5,-22 6,-24 4,-25 C 2,-26 0,-25 -1,-23 C -2,-21 -4,-20 -6,-19 C -10,-18 -12,-14 -12,-9 L -12,-2 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(417,51)"><g filter="url(#bGlow)"><path d="M -12,2 L 12,2 L 12,-2 L 9,-2 L 9,-12 L 12,-12 L 12,-17 L 7,-17 L 7,-14 L 2,-14 L 2,-17 L -2,-17 L -2,-14 L -7,-14 L -7,-17 L -12,-17 L -12,-12 L -9,-12 L -9,-2 L -12,-2 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(317,401)"><g id="a-wb" filter="url(#wGlow)"><path d="M 0,-23 C -1,-26 1,-26 0,-23 C -3,-20 -5,-16 -5,-11 C -7,-9 -9,-6 -9,-2 L -12,-2 L -12,2 L 12,2 L 12,-2 L 9,-2 C 9,-6 7,-9 5,-11 C 5,-16 3,-20 0,-23 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(367,401)"><g id="a-wn" filter="url(#wGlow)"><path d="M -12,2 L 12,2 L 12,-2 L 9,-2 L 9,-4 C 12,-6 13,-10 11,-14 C 10,-17 7,-20 4,-21 C 5,-22 6,-24 4,-25 C 2,-26 0,-25 -1,-23 C -2,-21 -4,-20 -6,-19 C -10,-18 -12,-14 -12,-9 L -12,-2 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(267,351)"><g id="a-wp" filter="url(#wGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(267,101)"><g id="a-bp" filter="url(#bGlow)"><path d="M 0,-17 C -5,-17 -6,-12 -4,-9 C -7,-8 -9,-5 -9,-1 L -12,-1 L -12,2 L 12,2 L 12,-1 L 9,-1 C 9,-5 7,-8 4,-9 C 6,-12 5,-17 0,-17 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(117,51)"><g id="a-bn" filter="url(#bGlow)"><path d="M -12,2 L 12,2 L 12,-2 L 9,-2 L 9,-4 C 12,-6 13,-10 11,-14 C 10,-17 7,-20 4,-21 C 5,-22 6,-24 4,-25 C 2,-26 0,-25 -1,-23 C -2,-21 -4,-20 -6,-19 C -10,-18 -12,-14 -12,-9 L -12,-2 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
-    <g transform="translate(317,51)"><g id="a-bb" filter="url(#bGlow)"><path d="M 0,-23 C -1,-26 1,-26 0,-23 C -3,-20 -5,-16 -5,-11 C -7,-9 -9,-6 -9,-2 L -12,-2 L -12,2 L 12,2 L 12,-2 L 9,-2 C 9,-6 7,-9 5,-11 C 5,-16 3,-20 0,-23 Z" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/></g></g>
+    <g transform="translate(72,72)" filter="url(#bGlow)">
+      <use href="#p-R" xlink:href="#p-R" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(168,72)" filter="url(#bGlow)">
+      <use href="#p-B" xlink:href="#p-B" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(216,72)" filter="url(#bGlow)">
+      <use href="#p-Q" xlink:href="#p-Q" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(264,72)" filter="url(#bGlow)">
+      <use href="#p-K" xlink:href="#p-K" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(360,72)" filter="url(#bGlow)">
+      <use href="#p-N" xlink:href="#p-N" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(408,72)" filter="url(#bGlow)">
+      <use href="#p-R" xlink:href="#p-R" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(72,120)" filter="url(#bGlow)">
+      <use href="#p-P" xlink:href="#p-P" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(120,120)" filter="url(#bGlow)">
+      <use href="#p-P" xlink:href="#p-P" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(168,120)" filter="url(#bGlow)">
+      <use href="#p-P" xlink:href="#p-P" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(216,120)" filter="url(#bGlow)">
+      <use href="#p-P" xlink:href="#p-P" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(312,120)" filter="url(#bGlow)">
+      <use href="#p-P" xlink:href="#p-P" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(360,120)" filter="url(#bGlow)">
+      <use href="#p-P" xlink:href="#p-P" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(408,120)" filter="url(#bGlow)">
+      <use href="#p-P" xlink:href="#p-P" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(72,360)" filter="url(#wGlow)">
+      <use href="#p-P" xlink:href="#p-P" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(120,360)" filter="url(#wGlow)">
+      <use href="#p-P" xlink:href="#p-P" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(168,360)" filter="url(#wGlow)">
+      <use href="#p-P" xlink:href="#p-P" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(216,360)" filter="url(#wGlow)">
+      <use href="#p-P" xlink:href="#p-P" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(312,360)" filter="url(#wGlow)">
+      <use href="#p-P" xlink:href="#p-P" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(360,360)" filter="url(#wGlow)">
+      <use href="#p-P" xlink:href="#p-P" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(408,360)" filter="url(#wGlow)">
+      <use href="#p-P" xlink:href="#p-P" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(72,408)" filter="url(#wGlow)">
+      <use href="#p-R" xlink:href="#p-R" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(120,408)" filter="url(#wGlow)">
+      <use href="#p-N" xlink:href="#p-N" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(168,408)" filter="url(#wGlow)">
+      <use href="#p-B" xlink:href="#p-B" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(216,408)" filter="url(#wGlow)">
+      <use href="#p-Q" xlink:href="#p-Q" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(264,408)" filter="url(#wGlow)">
+      <use href="#p-K" xlink:href="#p-K" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(408,408)" filter="url(#wGlow)">
+      <use href="#p-R" xlink:href="#p-R" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(120,72)">
+      <g class="move-b8-c6" filter="url(#bGlow)">
+        <use href="#p-N" xlink:href="#p-N" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/>
+      </g>
+    </g>
+    <g transform="translate(312,72)">
+      <g class="move-f8-c5" filter="url(#bGlow)">
+        <use href="#p-B" xlink:href="#p-B" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/>
+      </g>
+    </g>
+    <g transform="translate(264,120)">
+      <g class="move-e7-e5" filter="url(#bGlow)">
+        <use href="#p-P" xlink:href="#p-P" fill="#99f6e4" stroke="#134e4a" stroke-width="1.2" stroke-linejoin="round"/>
+      </g>
+    </g>
+    <g transform="translate(264,360)">
+      <g class="move-e2-e4" filter="url(#wGlow)">
+        <use href="#p-P" xlink:href="#p-P" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/>
+      </g>
+    </g>
+    <g transform="translate(312,408)">
+      <g class="move-f1-c4" filter="url(#wGlow)">
+        <use href="#p-B" xlink:href="#p-B" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/>
+      </g>
+    </g>
+    <g transform="translate(360,408)">
+      <g class="move-g1-f3" filter="url(#wGlow)">
+        <use href="#p-N" xlink:href="#p-N" fill="#ecfeff" stroke="#0891b2" stroke-width="1.2" stroke-linejoin="round"/>
+      </g>
+    </g>
   </g>
 </svg>
