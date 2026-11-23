@@ -1,5 +1,3 @@
-<p align="center"><sub>AN EDITORIAL PROFILE · JUSTAKSHAAY</sub></p>
-
 <!-- Hero Identity Card -->
 <p align="center">
   <a href="#_">
