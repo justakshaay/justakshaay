@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-Update assets/hero-card.svg to calm Aura reference animation:
-- Remove SYSTEMS // ACTIVE pill and top light arc
-- Clean solid luminous teal avatar ring
-- Slow 6s ambient breath on outer glow
-- Subtle concentric aura ripple rings on the right side
-- Preserve Base64 avatar and all profile text
+Update assets/hero-card.svg:
+- Remove floating right-side dot and concentric ripple rings
+- Add true, seamless Aura ambient glow:
+  - Rich Aura double-frame with 8s ambient breath
+  - 2 large ultra-soft blurred radial gradient light blobs (#14b8a6 and #0284c7)
+    inside the inner glass panel, clipped to rx="12", drifting smoothly in 8s loop
+- Preserve Base64 avatar, solid luminous teal ring, and all profile text/pills
 """
 import re
 import xml.etree.ElementTree as ET
@@ -31,9 +32,9 @@ def main():
       <stop offset="100%" stop-color="#071a19" />
     </linearGradient>
 
-    <radialGradient id="heroAuraRadial" cx="82%" cy="20%" r="65%">
-      <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.32" />
-      <stop offset="45%" stop-color="#0d9488" stop-opacity="0.14" />
+    <radialGradient id="heroAuraRadial" cx="80%" cy="20%" r="65%">
+      <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.30" />
+      <stop offset="45%" stop-color="#0d9488" stop-opacity="0.12" />
       <stop offset="85%" stop-color="#071a19" stop-opacity="0.02" />
       <stop offset="100%" stop-color="#071a19" stop-opacity="0" />
     </radialGradient>
@@ -42,6 +43,24 @@ def main():
       <stop offset="0%" stop-color="#0d9488" stop-opacity="0.25" />
       <stop offset="60%" stop-color="#071a19" stop-opacity="0.05" />
       <stop offset="100%" stop-color="#071a19" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Clip Path for Inner Panel (prevents glow overflow) -->
+    <clipPath id="innerPanelClip">
+      <rect x="14" y="14" width="892" height="222" rx="12" />
+    </clipPath>
+
+    <!-- Soft Aurora Ambient Glow Blobs -->
+    <radialGradient id="auroraBlob1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#14b8a6" stop-opacity="0.22" />
+      <stop offset="45%" stop-color="#0d9488" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#061414" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="auroraBlob2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.20" />
+      <stop offset="50%" stop-color="#082f49" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#061414" stop-opacity="0" />
     </radialGradient>
 
     <!-- Avatar Halo Gradient -->
@@ -56,13 +75,6 @@ def main():
       <stop offset="100%" stop-color="#2dd4bf" />
     </linearGradient>
 
-    <!-- Right-side Aura Orb Gradient -->
-    <radialGradient id="rippleOrb" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.22" />
-      <stop offset="50%" stop-color="#14b8a6" stop-opacity="0.07" />
-      <stop offset="100%" stop-color="#061414" stop-opacity="0" />
-    </radialGradient>
-
     <!-- Clip Path for Avatar -->
     <clipPath id="avatarClip">
       <circle cx="120" cy="125" r="54" />
@@ -71,54 +83,60 @@ def main():
 
   <style>
     @keyframes ambientBreath {{
-      0%, 100% {{ opacity: 0.70; }}
-      50%      {{ opacity: 0.95; }}
+      0%, 100% {{ opacity: 0.65; }}
+      50%      {{ opacity: 0.90; }}
     }}
-    @keyframes rippleAnim {{
-      0% {{
-        transform: scale(0.35);
-        opacity: 0.18;
+    @keyframes blobDrift1 {{
+      0%, 100% {{
+        transform: translate(0px, 0px) scale(1);
+        opacity: 0.16;
       }}
       50% {{
-        opacity: 0.10;
+        transform: translate(35px, 15px) scale(1.08);
+        opacity: 0.22;
       }}
-      100% {{
-        transform: scale(1.35);
-        opacity: 0;
+    }}
+    @keyframes blobDrift2 {{
+      0%, 100% {{
+        transform: translate(0px, 0px) scale(1);
+        opacity: 0.14;
+      }}
+      50% {{
+        transform: translate(-30px, -18px) scale(1.10);
+        opacity: 0.20;
       }}
     }}
     .ambient-glow {{
-      animation: ambientBreath 6s ease-in-out infinite;
+      animation: ambientBreath 8s ease-in-out infinite;
     }}
-    .ripple-1 {{
-      animation: rippleAnim 5s ease-in-out infinite;
-      transform-origin: 790px 125px;
+    .blob-1 {{
+      animation: blobDrift1 8s ease-in-out infinite;
+      transform-origin: 280px 40px;
     }}
-    .ripple-2 {{
-      animation: rippleAnim 5s ease-in-out infinite;
-      animation-delay: -2.5s;
-      transform-origin: 790px 125px;
+    .blob-2 {{
+      animation: blobDrift2 8s ease-in-out infinite;
+      transform-origin: 720px 210px;
     }}
   </style>
 
   <!-- Base Canvas -->
   <rect x="0" y="0" width="920" height="250" rx="18" fill="#071a19" />
 
-  <!-- Outer Frame: Aura Glow and Gradient Border with slow 6s ambient breath -->
+  <!-- Outer Frame: Aura Glow and Gradient Border with slow 8s ambient breath -->
   <rect x="1" y="1" width="918" height="248" rx="18" fill="url(#heroOuterGrad)" stroke="#2dd4bf" stroke-width="1.5" stroke-opacity="0.35" />
   <rect class="ambient-glow" x="1" y="1" width="918" height="248" rx="18" fill="url(#heroAuraRadial)" />
   <rect x="1" y="1" width="918" height="248" rx="18" fill="url(#heroAuraBottom)" />
 
   <!-- Inner Recessed Panel (14px inset, 88% dark fill, 20% teal border) -->
-  <rect x="14" y="14" width="892" height="222" rx="12" fill="#061414" fill-opacity="0.88" stroke="#2dd4bf" stroke-width="1" stroke-opacity="0.20" />
+  <rect x="14" y="14" width="892" height="222" rx="12" fill="#061414" fill-opacity="0.90" stroke="#2dd4bf" stroke-width="1" stroke-opacity="0.20" />
 
-  <!-- Right-Side Concentric Aura Ripple (Ambient GitSkins Aura effect) -->
-  <circle cx="790" cy="125" r="38" fill="url(#rippleOrb)" />
-  <circle class="ripple-1" cx="790" cy="125" r="46" fill="none" stroke="#2dd4bf" stroke-width="1" />
-  <circle class="ripple-2" cx="790" cy="125" r="46" fill="none" stroke="#2dd4bf" stroke-width="1" />
-  <circle cx="790" cy="125" r="2.5" fill="#2dd4bf" opacity="0.65" />
+  <!-- Ambient Shifting Aurora Glow Blobs (Clipped cleanly to inner panel) -->
+  <g clip-path="url(#innerPanelClip)">
+    <circle cx="280" cy="40" r="260" fill="url(#auroraBlob1)" class="blob-1" />
+    <circle cx="720" cy="210" r="280" fill="url(#auroraBlob2)" class="blob-2" />
+  </g>
 
-  <!-- Avatar Soft Halo and Crisp Solid Ring (No dashed stroke, no spinning animation) -->
+  <!-- Avatar Soft Halo and Crisp Solid Ring (Clean solid luminous teal ring) -->
   <circle cx="120" cy="125" r="70" fill="url(#avatarHalo)" />
   <circle cx="120" cy="125" r="56" fill="#071a19" stroke="url(#ringGrad)" stroke-width="2.5" />
 
@@ -158,7 +176,6 @@ def main():
   </g>
 </svg>"""
 
-    # Validate XML
     ET.fromstring(svg_content)
     print("XML Validation: PASS")
 
