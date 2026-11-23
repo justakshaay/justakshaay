@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Generate assets/contribution-snake.svg with real GitHub contribution data.
-Uses GraphQL API when GITHUB_TOKEN is set, falls back to HTML scraping.
+Generate assets/contribution-snake.svg with real GitHub contribution data
+and auto-update live profile stats in README.md.
+Uses GraphQL API when GITHUB_TOKEN is set, falls back to public REST/HTML scraping.
 Zero pip installs - stdlib only.
 """
 import os
@@ -12,16 +13,20 @@ import urllib.request
 from pathlib import Path
 
 # ─── Paths ────────────────────────────────────────────────────────────────────
-SCRIPT_DIR = Path(__file__).parent
-REPO_DIR   = SCRIPT_DIR.parent
-OUT_PATH   = REPO_DIR / "assets" / "contribution-snake.svg"
+SCRIPT_DIR  = Path(__file__).parent
+REPO_DIR    = SCRIPT_DIR.parent
+OUT_PATH    = REPO_DIR / "assets" / "contribution-snake.svg"
+README_PATH = REPO_DIR / "README.md"
 
 # ─── Aura Palette ─────────────────────────────────────────────────────────────
 LEVEL_COLORS = ["#11282c", "#0e7490", "#14b8a6", "#2dd4bf", "#5eead4"]
 
-# ─── Fetch contribution data via GraphQL ──────────────────────────────────────
+# ─── Fetch contribution & profile stats via GraphQL ───────────────────────────
 def fetch_via_graphql(token):
-    query = ('{ user(login: "justakshaay") { contributionsCollection {'
+    query = ('{ user(login: "justakshaay") {'
+             ' repositories(privacy: PUBLIC) { totalCount }'
+             ' followers { totalCount }'
+             ' contributionsCollection {'
              ' contributionCalendar { totalContributions weeks {'
              ' contributionDays { contributionCount date } } } } } }')
     payload = json.dumps({"query": query}).encode()
@@ -36,16 +41,34 @@ def fetch_via_graphql(token):
     )
     with urllib.request.urlopen(req, timeout=15) as r:
         data = json.loads(r.read())
-    cal = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]
+    user = data["data"]["user"]
+    repos = user.get("repositories", {}).get("totalCount", 9)
+    followers = user.get("followers", {}).get("totalCount", 3)
+    cal = user["contributionsCollection"]["contributionCalendar"]
     total = cal["totalContributions"]
     days = []
     for week in cal["weeks"]:
         col = [d["contributionCount"] for d in week["contributionDays"]]
-        # pad to 7 rows
         while len(col) < 7:
             col.append(0)
         days.append(col)
-    return total, days  # days[col_idx][row_idx], up to 53 cols x 7 rows
+    return total, days, repos, followers
+
+# ─── Fallback: REST API for repos & followers ─────────────────────────────────
+def fetch_user_meta_fallback():
+    url = "https://api.github.com/users/justakshaay"
+    req = urllib.request.Request(
+        url, headers={"User-Agent": "Mozilla/5.0 snake-generator/1.0"}
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=10) as r:
+            data = json.loads(r.read())
+        repos = data.get("public_repos", 9)
+        followers = data.get("followers", 3)
+        return repos, followers
+    except Exception as e:
+        print(f"User meta REST fallback failed: {e}")
+        return 9, 3
 
 # ─── Fallback: scrape GitHub contributions HTML ───────────────────────────────
 def fetch_via_html():
@@ -60,13 +83,11 @@ def fetch_via_html():
         print(f"HTML fallback failed: {e}")
         return 0, [[0]*7 for _ in range(52)]
 
-    # Match data-date and data-level attributes in any order
     rects = re.findall(
         r'<td[^>]+data-date="(\d{4}-\d{2}-\d{2})"[^>]*data-level="(\d)"[^>]*/?>',
         html
     )
     if not rects:
-        # Try alternate attribute order
         rects = re.findall(
             r'data-date="(\d{4}-\d{2}-\d{2})"[^>]*?data-level="(\d)"',
             html
@@ -90,19 +111,35 @@ def fetch_via_html():
     if col:
         days.append(col + [0] * (7 - len(col)))
 
-    # Ensure at least 52 columns
     while len(days) < 52:
         days.append([0] * 7)
 
     return total_active, days
 
+# ─── Update Profile Stats in README.md ─────────────────────────────────────────
+def update_readme_stats(repos, total_contribs, followers):
+    if not README_PATH.exists():
+        return
+    text = README_PATH.read_text(encoding="utf-8")
+    pattern = r"<!-- PROFILE_STATS:START -->.*?<!-- PROFILE_STATS:END -->"
+    replacement = (
+        "<!-- PROFILE_STATS:START -->\n"
+        "      <p>\n"
+        f"        <strong>{repos}</strong> public repos<br />\n"
+        f"        <strong>{total_contribs}</strong> contributions<br />\n"
+        f"        <strong>{followers}</strong> followers\n"
+        "      </p>\n"
+        "      <!-- PROFILE_STATS:END -->"
+    )
+    new_text, n = re.subn(pattern, replacement, text, flags=re.DOTALL)
+    if n > 0:
+        README_PATH.write_text(new_text, encoding="utf-8")
+        print(f"Updated README profile stats: {repos} repos, {total_contribs} contributions, {followers} followers")
+    else:
+        print("Warning: PROFILE_STATS markers not found in README.md")
+
 # ─── Build serpentine snake path ──────────────────────────────────────────────
 def build_snake_path(cols, cell_size, gap, grid_x, grid_y):
-    """
-    Build an SVG path that snakes column-by-column through the contribution grid.
-    Even columns go top→bottom, odd columns go bottom→top.
-    Returns path d attribute string.
-    """
     pts = []
     num_cols = min(len(cols), 52)
     num_rows = 7
@@ -130,7 +167,6 @@ def build_snake_path(cols, cell_size, gap, grid_x, grid_y):
 # ─── Build the full SVG string ────────────────────────────────────────────────
 def build_svg(total, days):
     W, H = 960, 270
-    # Layout constants
     CELL     = 11
     GAP      = 3.5
     STEP     = CELL + GAP
@@ -141,7 +177,6 @@ def build_svg(total, days):
     INNER_INS = 14
     INNER_RX  = 12
 
-    # Center grid in inner panel
     inner_x = INNER_INS
     inner_y = INNER_INS
     inner_w = W - 2 * INNER_INS
@@ -151,10 +186,8 @@ def build_svg(total, days):
     grid_x = inner_x + (inner_w - GRID_W) / 2
     grid_y = inner_y + HEADER_H + (inner_h - HEADER_H - GRID_H) / 2
 
-    # Snake path
     snake_path = build_snake_path(days, CELL, GAP, grid_x, grid_y)
 
-    # Build contribution grid cells
     grid_cells = []
     for c in range(COLS):
         col = days[c]
@@ -162,7 +195,6 @@ def build_svg(total, days):
             lvl = min(col[r], 4)
             cx = grid_x + c * STEP
             cy = grid_y + r * STEP
-            # Fade mask: cells near left edge get lower opacity
             fade = min(1.0, 0.3 + 0.7 * (c / max(COLS - 1, 1)))
             color = LEVEL_COLORS[lvl]
             grid_cells.append(
@@ -171,10 +203,6 @@ def build_svg(total, days):
             )
 
     grid_cells_str = "\n    ".join(grid_cells)
-
-    # Snake animation total distance (approximate)
-    total_pts = COLS * 7
-    # We'll use 28s for a full loop
 
     svg = f'''<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -256,7 +284,7 @@ def build_svg(total, days):
         font-size="15" font-weight="700" fill="#f8fafc"
         letter-spacing="0.3">{total} contributions, one continuous run</text>
 
-  <!-- LIVE label -->
+  <!-- LIVE label (shifted 8px left of dot) -->
   <text x="{W - INNER_INS - 58}" y="{INNER_INS + 22}"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
         font-size="9" font-weight="600" fill="#99f6e4"
@@ -307,20 +335,17 @@ def build_svg(total, days):
 
   <!-- Snake head group -->
   <g filter="url(#headGlow)">
-    <!-- Head body: glowing rounded rect -->
     <rect x="-7" y="-5" width="14" height="10" rx="4"
           fill="#99f6e4" opacity="0.95">
       <animateMotion dur="28s" repeatCount="indefinite" rotate="auto">
         <mpath xlink:href="#snakePath"/>
       </animateMotion>
     </rect>
-    <!-- Left eye -->
     <circle cx="-2" cy="-2" r="1.6" fill="#071a19">
       <animateMotion dur="28s" repeatCount="indefinite" rotate="auto">
         <mpath xlink:href="#snakePath"/>
       </animateMotion>
     </circle>
-    <!-- Right eye -->
     <circle cx="2" cy="-2" r="1.6" fill="#071a19">
       <animateMotion dur="28s" repeatCount="indefinite" rotate="auto">
         <mpath xlink:href="#snakePath"/>
@@ -335,20 +360,27 @@ def main():
     token = os.environ.get("GITHUB_TOKEN", "")
     total = 0
     days  = []
+    repos = 9
+    followers = 3
 
     if token:
         print("Fetching via GraphQL API...")
         try:
-            total, days = fetch_via_graphql(token)
-            print(f"GraphQL: {total} total contributions, {len(days)} weeks")
+            total, days, repos, followers = fetch_via_graphql(token)
+            print(f"GraphQL: {total} total contributions, {len(days)} weeks, {repos} repos, {followers} followers")
         except Exception as e:
-            print(f"GraphQL failed ({e}), falling back to HTML scrape...")
+            print(f"GraphQL failed ({e}), falling back to HTML & REST...")
             total, days = fetch_via_html()
+            repos, followers = fetch_user_meta_fallback()
     else:
-        print("No GITHUB_TOKEN — falling back to HTML scrape...")
+        print("No GITHUB_TOKEN — falling back to HTML & REST...")
         total, days = fetch_via_html()
+        repos, followers = fetch_user_meta_fallback()
 
-    print(f"Total contributions: {total}, grid columns: {len(days)}")
+    print(f"Live stats: {repos} repos, {total} contributions, {followers} followers")
+
+    # Update profile stats in README.md
+    update_readme_stats(repos, total, followers)
 
     svg_str = build_svg(total, days)
 

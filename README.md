@@ -46,11 +46,13 @@
         <strong>BASED</strong> · Delhi<br />
         <strong>FOCUS</strong> · AI/ML, Full-Stack Systems &amp; End-to-End Products
       </p>
+      <!-- PROFILE_STATS:START -->
       <p>
         <strong>9</strong> public repos<br />
-        <strong>77+</strong> contributions<br />
+        <strong>86</strong> contributions<br />
         <strong>3</strong> followers
       </p>
+      <!-- PROFILE_STATS:END -->
       <p>
         <a href="#_"><img src="https://img.shields.io/badge/Status-Building_Systems-071a19?style=flat-square&logo=github&logoColor=2dd4bf&labelColor=051514" alt="Status" /></a>
         <a href="#_"><img src="https://img.shields.io/badge/Open_Source-Active-071a19?style=flat-square&logo=git&logoColor=2dd4bf&labelColor=051514" alt="Open Source" /></a>
