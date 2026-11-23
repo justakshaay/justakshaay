@@ -2,12 +2,16 @@
 
 <!-- Hero Identity Card -->
 <p align="center">
-  <img src="./assets/hero-card.svg" width="100%" alt="Akshay Kumar — Software Developer & AI/ML Engineer" />
+  <a href="#_">
+    <img src="./assets/hero-card.svg" width="100%" alt="Akshay Kumar — Software Developer & AI/ML Engineer" />
+  </a>
 </p>
 
 <!-- Monospace Terminal Banner -->
 <p align="center">
-  <img src="./assets/ascii-banner.svg" width="100%" alt="Akshay Kumar Terminal Banner" />
+  <a href="#_">
+    <img src="./assets/ascii-banner.svg" width="100%" alt="Akshay Kumar Terminal Banner" />
+  </a>
 </p>
 
 <p align="center">
@@ -63,7 +67,9 @@
 ## In the current cut
 
 <p align="center">
-  <img src="./assets/focus-domains.svg" width="100%" alt="Engineering Focus — Core Domains" />
+  <a href="#_">
+    <img src="./assets/focus-domains.svg" width="100%" alt="Engineering Focus — Core Domains" />
+  </a>
 </p>
 
 <p align="center">
@@ -176,16 +182,24 @@
 ## Under the hood
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=justakshaay&show_icons=true&theme=default&bg_color=071a19&title_color=2dd4bf&text_color=e2e8f0&icon_color=2dd4bf&border_color=134e4a&hide_border=false" alt="GitHub Overview Stats" />
-  <img src="https://streak-stats.demolab.com/?user=justakshaay&theme=dark&background=071a19&border=134e4a&stroke=2dd4bf&ring=2dd4bf&fire=2dd4bf&currStreakNum=2dd4bf&sideNums=e2e8f0&sideLabels=94a3b8&dates=94a3b8" alt="GitHub Streak Stats" />
+  <a href="#_">
+    <img src="https://github-readme-stats.vercel.app/api?username=justakshaay&show_icons=true&theme=default&bg_color=071a19&title_color=2dd4bf&text_color=e2e8f0&icon_color=2dd4bf&border_color=134e4a&hide_border=false" alt="GitHub Overview Stats" />
+  </a>
+  <a href="#_">
+    <img src="https://streak-stats.demolab.com/?user=justakshaay&theme=dark&background=071a19&border=134e4a&stroke=2dd4bf&ring=2dd4bf&fire=2dd4bf&currStreakNum=2dd4bf&sideNums=e2e8f0&sideLabels=94a3b8&dates=94a3b8" alt="GitHub Streak Stats" />
+  </a>
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=justakshaay&layout=compact&bg_color=071a19&title_color=2dd4bf&text_color=e2e8f0&border_color=134e4a&hide_border=false" alt="Top Languages" />
+  <a href="#_">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=justakshaay&layout=compact&bg_color=071a19&title_color=2dd4bf&text_color=e2e8f0&border_color=134e4a&hide_border=false" alt="Top Languages" />
+  </a>
 </p>
 
 <p align="center">
-  <img src="./assets/contribution-snake.svg" alt="Contribution Trail" width="100%"/>
+  <a href="#_">
+    <img src="./assets/contribution-snake.svg" alt="Contribution Trail" width="100%"/>
+  </a>
 </p>
 
 <p align="center">
@@ -198,7 +212,9 @@
 ## Beyond the code
 
 <p align="center">
-  <img src="./assets/workflow-terminal.svg" width="100%" alt="Beyond the Code — Engineering Workflow" />
+  <a href="#_">
+    <img src="./assets/workflow-terminal.svg" width="100%" alt="Beyond the Code — Engineering Workflow" />
+  </a>
 </p>
 
 <blockquote>
@@ -213,7 +229,9 @@
 ## Play the next move
 
 <p align="center">
-  <img src="./assets/chess-board.svg" alt="Chess Board — Italian Game Opening · 1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5" width="420"/>
+  <a href="#_">
+    <img src="./assets/chess-board.svg" alt="Chess Board — Italian Game Opening · 1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5" width="420"/>
+  </a>
 </p>
 
 <p align="center">──────── ◇ ────────</p>
