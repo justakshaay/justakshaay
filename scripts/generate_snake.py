@@ -72,7 +72,12 @@ def fetch_via_html():
             html
         )
 
-    total_active = sum(1 for _, lvl in rects if int(lvl) > 0)
+    # Extract total contribution count from heading (e.g. "86 contributions in the last year")
+    m = re.search(r'([0-9,]+)\s+contributions\s+in', html, re.I)
+    if m:
+        total_active = int(m.group(1).replace(',', ''))
+    else:
+        total_active = sum(1 for _, lvl in rects if int(lvl) > 0)
 
     # Build columns of 7 days each
     days = []
@@ -252,7 +257,7 @@ def build_svg(total, days):
         letter-spacing="0.3">{total} contributions, one continuous run</text>
 
   <!-- LIVE label -->
-  <text x="{W - INNER_INS - 50}" y="{INNER_INS + 22}"
+  <text x="{W - INNER_INS - 58}" y="{INNER_INS + 22}"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
         font-size="9" font-weight="600" fill="#99f6e4"
         letter-spacing="3">LIVE</text>

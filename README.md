@@ -181,7 +181,7 @@
 
 <p align="center">
   <a href="#_">
-    <img src="https://github-readme-stats.vercel.app/api?username=justakshaay&show_icons=true&theme=default&bg_color=071a19&title_color=2dd4bf&text_color=e2e8f0&icon_color=2dd4bf&border_color=134e4a&hide_border=false" alt="GitHub Overview Stats" />
+    <img src="https://github-readme-stats.vercel.app/api?username=justakshaay&show_icons=true&count_private=true&include_all_commits=true&theme=default&bg_color=071a19&title_color=2dd4bf&text_color=e2e8f0&icon_color=2dd4bf&border_color=134e4a&hide_border=false" alt="GitHub Overview Stats" />
   </a>
   <a href="#_">
     <img src="https://streak-stats.demolab.com/?user=justakshaay&theme=dark&background=071a19&border=134e4a&stroke=2dd4bf&ring=2dd4bf&fire=2dd4bf&currStreakNum=2dd4bf&sideNums=e2e8f0&sideLabels=94a3b8&dates=94a3b8" alt="GitHub Streak Stats" />
