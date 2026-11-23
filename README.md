@@ -54,8 +54,8 @@
         <strong>3</strong> followers
       </p>
       <p>
-        <img src="https://img.shields.io/badge/Status-Building_Systems-071a19?style=flat-square&logo=github&logoColor=2dd4bf&labelColor=051514" alt="Status" />
-        <img src="https://img.shields.io/badge/Open_Source-Active-071a19?style=flat-square&logo=git&logoColor=2dd4bf&labelColor=051514" alt="Open Source" />
+        <a href="#_"><img src="https://img.shields.io/badge/Status-Building_Systems-071a19?style=flat-square&logo=github&logoColor=2dd4bf&labelColor=051514" alt="Status" /></a>
+        <a href="#_"><img src="https://img.shields.io/badge/Open_Source-Active-071a19?style=flat-square&logo=git&logoColor=2dd4bf&labelColor=051514" alt="Open Source" /></a>
       </p>
     </td>
   </tr>
@@ -85,9 +85,9 @@
 
 | Category | Tools &amp; Technologies |
 | :--- | :--- |
-| **Programming** | <img src="https://img.shields.io/badge/Python-071a19?style=for-the-badge&logo=python&logoColor=2dd4bf&labelColor=051514" alt="Python" /> <img src="https://img.shields.io/badge/C++-071a19?style=for-the-badge&logo=c%2B%2B&logoColor=2dd4bf&labelColor=051514" alt="C++" /> <img src="https://img.shields.io/badge/TypeScript-071a19?style=for-the-badge&logo=typescript&logoColor=2dd4bf&labelColor=051514" alt="TypeScript" /> <img src="https://img.shields.io/badge/JavaScript-071a19?style=for-the-badge&logo=javascript&logoColor=2dd4bf&labelColor=051514" alt="JavaScript" /> <img src="https://img.shields.io/badge/HTML5-071a19?style=for-the-badge&logo=html5&logoColor=2dd4bf&labelColor=051514" alt="HTML5" /> <img src="https://img.shields.io/badge/CSS3-071a19?style=for-the-badge&logo=css3&logoColor=2dd4bf&labelColor=051514" alt="CSS3" /> |
-| **AI &amp; Data** | <img src="https://img.shields.io/badge/Machine_Learning-071a19?style=for-the-badge&logo=scikitlearn&logoColor=2dd4bf&labelColor=051514" alt="Machine Learning" /> <img src="https://img.shields.io/badge/Deep_Learning-071a19?style=for-the-badge&logo=pytorch&logoColor=2dd4bf&labelColor=051514" alt="Deep Learning" /> <img src="https://img.shields.io/badge/Data_Analysis-071a19?style=for-the-badge&logo=pandas&logoColor=2dd4bf&labelColor=051514" alt="Data Analysis" /> <img src="https://img.shields.io/badge/Jupyter-071a19?style=for-the-badge&logo=jupyter&logoColor=2dd4bf&labelColor=051514" alt="Jupyter" /> |
-| **Development Tools** | <img src="https://img.shields.io/badge/Git-071a19?style=for-the-badge&logo=git&logoColor=2dd4bf&labelColor=051514" alt="Git" /> <img src="https://img.shields.io/badge/GitHub-071a19?style=for-the-badge&logo=github&logoColor=2dd4bf&labelColor=051514" alt="GitHub" /> <img src="https://img.shields.io/badge/VS_Code-071a19?style=for-the-badge&logo=visualstudiocode&logoColor=2dd4bf&labelColor=051514" alt="VS Code" /> <img src="https://img.shields.io/badge/Linux-071a19?style=for-the-badge&logo=linux&logoColor=2dd4bf&labelColor=051514" alt="Linux" /> <img src="https://img.shields.io/badge/Vercel-071a19?style=for-the-badge&logo=vercel&logoColor=2dd4bf&labelColor=051514" alt="Vercel" /> |
+| **Programming** | <a href="#_"><img src="https://img.shields.io/badge/Python-071a19?style=for-the-badge&logo=python&logoColor=2dd4bf&labelColor=051514" alt="Python" /></a> <a href="#_"><img src="https://img.shields.io/badge/C++-071a19?style=for-the-badge&logo=c%2B%2B&logoColor=2dd4bf&labelColor=051514" alt="C++" /></a> <a href="#_"><img src="https://img.shields.io/badge/TypeScript-071a19?style=for-the-badge&logo=typescript&logoColor=2dd4bf&labelColor=051514" alt="TypeScript" /></a> <a href="#_"><img src="https://img.shields.io/badge/JavaScript-071a19?style=for-the-badge&logo=javascript&logoColor=2dd4bf&labelColor=051514" alt="JavaScript" /></a> <a href="#_"><img src="https://img.shields.io/badge/HTML5-071a19?style=for-the-badge&logo=html5&logoColor=2dd4bf&labelColor=051514" alt="HTML5" /></a> <a href="#_"><img src="https://img.shields.io/badge/CSS3-071a19?style=for-the-badge&logo=css3&logoColor=2dd4bf&labelColor=051514" alt="CSS3" /></a> |
+| **AI &amp; Data** | <a href="#_"><img src="https://img.shields.io/badge/Machine_Learning-071a19?style=for-the-badge&logo=scikitlearn&logoColor=2dd4bf&labelColor=051514" alt="Machine Learning" /></a> <a href="#_"><img src="https://img.shields.io/badge/Deep_Learning-071a19?style=for-the-badge&logo=pytorch&logoColor=2dd4bf&labelColor=051514" alt="Deep Learning" /></a> <a href="#_"><img src="https://img.shields.io/badge/Data_Analysis-071a19?style=for-the-badge&logo=pandas&logoColor=2dd4bf&labelColor=051514" alt="Data Analysis" /></a> <a href="#_"><img src="https://img.shields.io/badge/Jupyter-071a19?style=for-the-badge&logo=jupyter&logoColor=2dd4bf&labelColor=051514" alt="Jupyter" /></a> |
+| **Development Tools** | <a href="#_"><img src="https://img.shields.io/badge/Git-071a19?style=for-the-badge&logo=git&logoColor=2dd4bf&labelColor=051514" alt="Git" /></a> <a href="#_"><img src="https://img.shields.io/badge/GitHub-071a19?style=for-the-badge&logo=github&logoColor=2dd4bf&labelColor=051514" alt="GitHub" /></a> <a href="#_"><img src="https://img.shields.io/badge/VS_Code-071a19?style=for-the-badge&logo=visualstudiocode&logoColor=2dd4bf&labelColor=051514" alt="VS Code" /></a> <a href="#_"><img src="https://img.shields.io/badge/Linux-071a19?style=for-the-badge&logo=linux&logoColor=2dd4bf&labelColor=051514" alt="Linux" /></a> <a href="#_"><img src="https://img.shields.io/badge/Vercel-071a19?style=for-the-badge&logo=vercel&logoColor=2dd4bf&labelColor=051514" alt="Vercel" /></a> |
 
 </div>
 
@@ -107,9 +107,9 @@
       <h3><a href="https://github.com/justakshaay/NAVIS-Networked-Adaptive-Visual-Intelligent-Space-Navigation-Sounds-like-a-real-aerospace-system">NAVIS ↗</a></h3>
       <p>An intelligent satellite-coordination and navigation system designed to support planetary rover operations in GPS-denied environments through adaptive satellite allocation for positioning, navigation, imaging, and communication.</p>
       <p>
-        <img src="https://img.shields.io/badge/Python-0d2624?style=flat-square&logo=python&logoColor=2dd4bf" alt="Python" />
-        <img src="https://img.shields.io/badge/Autonomous_Nav-0d2624?style=flat-square&logoColor=2dd4bf" alt="Nav" />
-        <img src="https://img.shields.io/badge/Aerospace-0d2624?style=flat-square&logoColor=2dd4bf" alt="Aerospace" />
+        <a href="#_"><img src="https://img.shields.io/badge/Python-0d2624?style=flat-square&logo=python&logoColor=2dd4bf" alt="Python" /></a>
+        <a href="#_"><img src="https://img.shields.io/badge/Autonomous_Nav-0d2624?style=flat-square&logoColor=2dd4bf" alt="Nav" /></a>
+        <a href="#_"><img src="https://img.shields.io/badge/Aerospace-0d2624?style=flat-square&logoColor=2dd4bf" alt="Aerospace" /></a>
       </p>
     </td>
     <td width="50%" valign="top">
@@ -117,9 +117,9 @@
       <h3><a href="https://github.com/justakshaay/walletsync">WalletSync ↗</a></h3>
       <p>A personal finance management web application focused on expense tracking, financial organization, and a unified view of personal finances with cash flow tracking across multiple accounts and intelligent habit tagging.</p>
       <p>
-        <img src="https://img.shields.io/badge/Full--Stack-0d2624?style=flat-square&logoColor=2dd4bf" alt="Full-Stack" />
-        <img src="https://img.shields.io/badge/Finance_Engine-0d2624?style=flat-square&logoColor=2dd4bf" alt="FinTech" />
-        <img src="https://img.shields.io/badge/Web_App-0d2624?style=flat-square&logoColor=2dd4bf" alt="Web" />
+        <a href="#_"><img src="https://img.shields.io/badge/Full--Stack-0d2624?style=flat-square&logoColor=2dd4bf" alt="Full-Stack" /></a>
+        <a href="#_"><img src="https://img.shields.io/badge/Finance_Engine-0d2624?style=flat-square&logoColor=2dd4bf" alt="FinTech" /></a>
+        <a href="#_"><img src="https://img.shields.io/badge/Web_App-0d2624?style=flat-square&logoColor=2dd4bf" alt="Web" /></a>
       </p>
     </td>
   </tr>
@@ -129,9 +129,9 @@
       <h3><a href="https://github.com/justakshaay/hierarchy-explorer">Hierarchy Explorer ↗</a></h3>
       <p>A system for exploring organizational and family hierarchies using binary trees, tree operations, and preorder, inorder, and postorder traversal algorithms, deployed with an interactive visual interface.</p>
       <p>
-        <img src="https://img.shields.io/badge/C++-0d2624?style=flat-square&logo=c%2B%2B&logoColor=2dd4bf" alt="C++" />
-        <img src="https://img.shields.io/badge/TypeScript-0d2624?style=flat-square&logo=typescript&logoColor=2dd4bf" alt="TypeScript" />
-        <img src="https://img.shields.io/badge/Vercel-0d2624?style=flat-square&logo=vercel&logoColor=2dd4bf" alt="Vercel" />
+        <a href="#_"><img src="https://img.shields.io/badge/C++-0d2624?style=flat-square&logo=c%2B%2B&logoColor=2dd4bf" alt="C++" /></a>
+        <a href="#_"><img src="https://img.shields.io/badge/TypeScript-0d2624?style=flat-square&logo=typescript&logoColor=2dd4bf" alt="TypeScript" /></a>
+        <a href="#_"><img src="https://img.shields.io/badge/Vercel-0d2624?style=flat-square&logo=vercel&logoColor=2dd4bf&labelColor=051514" alt="Vercel" /></a>
       </p>
       <p>
         <a href="https://hierarchy-explorer-nine.vercel.app"><strong>🚀 Live Demo</strong></a>
@@ -142,9 +142,9 @@
       <h3><a href="https://github.com/justakshaay/PassForge">PassForge ↗</a></h3>
       <p>A Python password utility focused on password strength evaluation and security validation using multi-factor entropy checks, pattern detection, and hidden secure input handling.</p>
       <p>
-        <img src="https://img.shields.io/badge/Python-0d2624?style=flat-square&logo=python&logoColor=2dd4bf" alt="Python" />
-        <img src="https://img.shields.io/badge/Security_Audit-0d2624?style=flat-square&logoColor=2dd4bf" alt="Security" />
-        <img src="https://img.shields.io/badge/CLI_Tool-0d2624?style=flat-square&logoColor=2dd4bf" alt="CLI" />
+        <a href="#_"><img src="https://img.shields.io/badge/Python-0d2624?style=flat-square&logo=python&logoColor=2dd4bf" alt="Python" /></a>
+        <a href="#_"><img src="https://img.shields.io/badge/Security_Audit-0d2624?style=flat-square&logoColor=2dd4bf" alt="Security" /></a>
+        <a href="#_"><img src="https://img.shields.io/badge/CLI_Tool-0d2624?style=flat-square&logoColor=2dd4bf" alt="CLI" /></a>
       </p>
     </td>
   </tr>
@@ -154,9 +154,9 @@
       <h3><a href="https://github.com/justakshaay/TubeVault">TubeVault ↗</a></h3>
       <p>A media utility designed to simplify video-related download and audio extraction workflows with clean automated local storage handling.</p>
       <p>
-        <img src="https://img.shields.io/badge/Python-0d2624?style=flat-square&logo=python&logoColor=2dd4bf" alt="Python" />
-        <img src="https://img.shields.io/badge/Automation-0d2624?style=flat-square&logoColor=2dd4bf" alt="Automation" />
-        <img src="https://img.shields.io/badge/Media_Engine-0d2624?style=flat-square&logoColor=2dd4bf" alt="Media" />
+        <a href="#_"><img src="https://img.shields.io/badge/Python-0d2624?style=flat-square&logo=python&logoColor=2dd4bf" alt="Python" /></a>
+        <a href="#_"><img src="https://img.shields.io/badge/Automation-0d2624?style=flat-square&logoColor=2dd4bf" alt="Automation" /></a>
+        <a href="#_"><img src="https://img.shields.io/badge/Media_Engine-0d2624?style=flat-square&logoColor=2dd4bf" alt="Media" /></a>
       </p>
     </td>
     <td width="50%" valign="top">
@@ -164,9 +164,9 @@
       <h3><a href="https://github.com/justakshaay/MachineLearning">Machine Learning ↗</a></h3>
       <p>A collection of machine learning experiments, implementations, notebooks, and data-driven explorations focusing on pattern discovery, algorithm benchmarks, and predictive model training.</p>
       <p>
-        <img src="https://img.shields.io/badge/Jupyter-0d2624?style=flat-square&logo=jupyter&logoColor=2dd4bf" alt="Jupyter" />
-        <img src="https://img.shields.io/badge/Scikit--Learn-0d2624?style=flat-square&logo=scikitlearn&logoColor=2dd4bf" alt="Scikit-Learn" />
-        <img src="https://img.shields.io/badge/Data_Science-0d2624?style=flat-square&logoColor=2dd4bf" alt="Data Science" />
+        <a href="#_"><img src="https://img.shields.io/badge/Jupyter-0d2624?style=flat-square&logo=jupyter&logoColor=2dd4bf" alt="Jupyter" /></a>
+        <a href="#_"><img src="https://img.shields.io/badge/Scikit--Learn-0d2624?style=flat-square&logo=scikitlearn&logoColor=2dd4bf" alt="Scikit-Learn" /></a>
+        <a href="#_"><img src="https://img.shields.io/badge/Data_Science-0d2624?style=flat-square&logoColor=2dd4bf" alt="Data Science" /></a>
       </p>
     </td>
   </tr>
