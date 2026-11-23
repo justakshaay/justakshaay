@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
 Update assets/hero-card.svg:
-- Remove floating right-side dot and concentric ripple rings
-- Add true, seamless Aura ambient glow:
-  - Rich Aura double-frame with 8s ambient breath
-  - 2 large ultra-soft blurred radial gradient light blobs (#14b8a6 and #0284c7)
-    inside the inner glass panel, clipped to rx="12", drifting smoothly in 8s loop
-- Preserve Base64 avatar, solid luminous teal ring, and all profile text/pills
+- Luminous Traveling Border Light Beam (perimeter trace at 6s linear loop)
+- Diagonal Glassmorphic Sheen Sweep (sweeps across glass panel every 5s)
+- Visible Breathing Avatar Halo (pulses 0.35 -> 0.85 every 3.5s)
+- Ambient shifting aurora wash in background
+- Zero floating radar dots or circles
+- Preserve Base64 avatar and all profile text/pills
 """
 import re
 import xml.etree.ElementTree as ET
@@ -45,7 +45,7 @@ def main():
       <stop offset="100%" stop-color="#071a19" stop-opacity="0" />
     </radialGradient>
 
-    <!-- Clip Path for Inner Panel (prevents glow overflow) -->
+    <!-- Clip Path for Inner Panel (cleanly bounds sheen and aurora) -->
     <clipPath id="innerPanelClip">
       <rect x="14" y="14" width="892" height="222" rx="12" />
     </clipPath>
@@ -63,10 +63,28 @@ def main():
       <stop offset="100%" stop-color="#061414" stop-opacity="0" />
     </radialGradient>
 
+    <!-- Diagonal Glassmorphic Sheen Gradient -->
+    <linearGradient id="sheenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5eead4" stop-opacity="0" />
+      <stop offset="30%" stop-color="#5eead4" stop-opacity="0.03" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.14" />
+      <stop offset="70%" stop-color="#5eead4" stop-opacity="0.03" />
+      <stop offset="100%" stop-color="#5eead4" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Border Light Beam Glow Filter -->
+    <filter id="beamGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
     <!-- Avatar Halo Gradient -->
     <radialGradient id="avatarHalo" cx="50%" cy="50%" r="50%">
-      <stop offset="50%" stop-color="#2dd4bf" stop-opacity="0.28" />
-      <stop offset="85%" stop-color="#14b8a6" stop-opacity="0.08" />
+      <stop offset="40%" stop-color="#2dd4bf" stop-opacity="0.45" />
+      <stop offset="75%" stop-color="#14b8a6" stop-opacity="0.16" />
       <stop offset="100%" stop-color="#061414" stop-opacity="0" />
     </radialGradient>
 
@@ -85,6 +103,28 @@ def main():
     @keyframes ambientBreath {{
       0%, 100% {{ opacity: 0.65; }}
       50%      {{ opacity: 0.90; }}
+    }}
+    @keyframes borderTrace {{
+      0%   {{ stroke-dashoffset: 0; }}
+      100% {{ stroke-dashoffset: -2020; }}
+    }}
+    @keyframes sheenSweep {{
+      0% {{
+        transform: translate(-380px, -20px) skewX(-25deg);
+      }}
+      55%, 100% {{
+        transform: translate(1150px, -20px) skewX(-25deg);
+      }}
+    }}
+    @keyframes avatarPulse {{
+      0%, 100% {{
+        opacity: 0.35;
+        transform: scale(0.96);
+      }}
+      50% {{
+        opacity: 0.85;
+        transform: scale(1.06);
+      }}
     }}
     @keyframes blobDrift1 {{
       0%, 100% {{
@@ -109,6 +149,17 @@ def main():
     .ambient-glow {{
       animation: ambientBreath 8s ease-in-out infinite;
     }}
+    .border-beam {{
+      stroke-dasharray: 220 1800;
+      animation: borderTrace 6s linear infinite;
+    }}
+    .sheen-rect {{
+      animation: sheenSweep 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }}
+    .avatar-glow {{
+      animation: avatarPulse 3.5s ease-in-out infinite;
+      transform-origin: 120px 125px;
+    }}
     .blob-1 {{
       animation: blobDrift1 8s ease-in-out infinite;
       transform-origin: 280px 40px;
@@ -127,17 +178,23 @@ def main():
   <rect class="ambient-glow" x="1" y="1" width="918" height="248" rx="18" fill="url(#heroAuraRadial)" />
   <rect x="1" y="1" width="918" height="248" rx="18" fill="url(#heroAuraBottom)" />
 
-  <!-- Inner Recessed Panel (14px inset, 88% dark fill, 20% teal border) -->
+  <!-- Inner Recessed Panel (14px inset, 90% dark fill, 20% teal border) -->
   <rect x="14" y="14" width="892" height="222" rx="12" fill="#061414" fill-opacity="0.90" stroke="#2dd4bf" stroke-width="1" stroke-opacity="0.20" />
 
-  <!-- Ambient Shifting Aurora Glow Blobs (Clipped cleanly to inner panel) -->
+  <!-- Ambient Shifting Aurora Glow Blobs and Diagonal Sheen Sweep (Clipped cleanly to inner panel) -->
   <g clip-path="url(#innerPanelClip)">
     <circle cx="280" cy="40" r="260" fill="url(#auroraBlob1)" class="blob-1" />
     <circle cx="720" cy="210" r="280" fill="url(#auroraBlob2)" class="blob-2" />
+    <!-- Diagonal Glassmorphic Sheen Sweep -->
+    <rect class="sheen-rect" x="0" y="-30" width="220" height="320" fill="url(#sheenGrad)" />
   </g>
 
-  <!-- Avatar Soft Halo and Crisp Solid Ring (Clean solid luminous teal ring) -->
-  <circle cx="120" cy="125" r="70" fill="url(#avatarHalo)" />
+  <!-- Luminous Traveling Border Light Beam (Glides continuously around perimeter) -->
+  <rect class="border-beam" x="14" y="14" width="892" height="222" rx="12"
+        fill="none" stroke="#5eead4" stroke-width="2" filter="url(#beamGlow)" />
+
+  <!-- Avatar Soft Halo and Crisp Solid Ring (Pulsing Avatar Halo) -->
+  <circle cx="120" cy="125" r="74" fill="url(#avatarHalo)" class="avatar-glow" />
   <circle cx="120" cy="125" r="56" fill="#071a19" stroke="url(#ringGrad)" stroke-width="2.5" />
 
   <!-- Embedded Base64 Avatar Image -->
