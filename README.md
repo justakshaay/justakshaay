@@ -48,8 +48,8 @@
       </p>
       <!-- PROFILE_STATS:START -->
       <p>
-        <strong>9</strong> public repos<br />
-        <strong>103</strong> contributions<br />
+        <strong>10</strong> public repos<br />
+        <strong>104</strong> contributions<br />
         <strong>3</strong> followers
       </p>
       <!-- PROFILE_STATS:END -->
