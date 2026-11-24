@@ -49,7 +49,7 @@
       <!-- PROFILE_STATS:START -->
       <p>
         <strong>10</strong> public repos<br />
-        <strong>86</strong> contributions<br />
+        <strong>95</strong> contributions<br />
         <strong>3</strong> followers
       </p>
       <!-- PROFILE_STATS:END -->

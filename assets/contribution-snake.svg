@@ -76,7 +76,7 @@
   <text x="28" y="58"
         font-family="'JetBrains Mono','Fira Code','Courier New',monospace"
         font-size="15" font-weight="700" fill="#f8fafc"
-        letter-spacing="0.3">86 contributions, one continuous run</text>
+        letter-spacing="0.3">95 contributions, one continuous run</text>
 
   <!-- LIVE label (shifted 8px left of dot) -->
   <text x="888" y="36"
