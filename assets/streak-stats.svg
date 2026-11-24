@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 495 195" width="495" height="195">
+  <defs>
+    <!-- Outer glow gradient -->
+    <radialGradient id="outerGlowStreak" cx="50%" cy="50%" r="60%" fx="20%" fy="30%">
+      <stop offset="0%"   stop-color="#14b8a6" stop-opacity="0.50"/>
+      <stop offset="35%"  stop-color="#0d9488" stop-opacity="0.30"/>
+      <stop offset="70%"  stop-color="#082f49" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#071a19" stop-opacity="0.08"/>
+    </radialGradient>
+    <!-- Inner panel gradient -->
+    <linearGradient id="innerGradStreak" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#0a1f1e" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#061414" stop-opacity="0.90"/>
+    </linearGradient>
+    <!-- Flame glow filter -->
+    <filter id="flameGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes glowPulseStreak {
+      0%, 100% { opacity: 0.55; }
+      50%       { opacity: 0.85; }
+    }
+    @keyframes flamePulse {
+      0%, 100% { transform: scale(1); opacity: 0.95; }
+      50%       { transform: scale(1.12); opacity: 1; }
+    }
+    .glow-pulse-streak { animation: glowPulseStreak 3.5s ease-in-out infinite; }
+    .flame-icon { animation: flamePulse 2s ease-in-out infinite; transform-origin: 247.5px 44px; }
+  </style>
+
+  <!-- Canvas -->
+  <rect width="495" height="195" fill="#071a19" rx="14"/>
+
+  <!-- Outer glow overlay -->
+  <rect width="495" height="195" rx="14"
+        fill="url(#outerGlowStreak)" class="glow-pulse-streak"/>
+
+  <!-- Outer border -->
+  <rect x="1" y="1" width="493" height="193" rx="14"
+        fill="none" stroke="#2dd4bf" stroke-width="1.2" stroke-opacity="0.35"/>
+
+  <!-- Inner recessed panel -->
+  <rect x="10" y="10"
+        width="475" height="175"
+        rx="10" fill="url(#innerGradStreak)"/>
+  <rect x="10.5" y="10.5"
+        width="474" height="174"
+        rx="10" fill="none" stroke="#2dd4bf" stroke-width="1" stroke-opacity="0.20"/>
+
+  <!-- Top Micro-Header -->
+  <text x="247.5" y="27"
+        text-anchor="middle"
+        font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace"
+        font-size="9" font-weight="600" fill="#2dd4bf"
+        letter-spacing="2.5">STREAK TELEMETRY // ASIA-KOLKATA</text>
+
+  <!-- Column Dividers -->
+  <line x1="168" y1="36" x2="168" y2="162" stroke="#2dd4bf" stroke-width="1" stroke-opacity="0.20"/>
+  <line x1="327" y1="36" x2="327" y2="162" stroke="#2dd4bf" stroke-width="1" stroke-opacity="0.20"/>
+
+  <!-- ==================== COLUMN 1: TOTAL CONTRIBUTIONS ==================== -->
+  <text x="89" y="86"
+        text-anchor="middle"
+        font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace"
+        font-size="28" font-weight="700" fill="#f8fafc">103</text>
+  <text x="89" y="116"
+        text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+        font-size="13" font-weight="600" fill="#2dd4bf">Total Contributions</text>
+  <text x="89" y="142"
+        text-anchor="middle"
+        font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace"
+        font-size="10.5" fill="#94a3b8">Nov 23 – Present</text>
+
+  <!-- ==================== COLUMN 2: CURRENT STREAK ==================== -->
+  <g class="flame-icon" filter="url(#flameGlow)">
+    <path d="M 247.5 35 C 249.5 38 253.5 41 253.5 45 C 253.5 49 250.5 52 247.5 53 C 244.5 52 241.5 49 241.5 45 C 241.5 41 244.5 38 246.5 36 C 246.5 38 247.5 40 248.5 42 C 249.5 43.5 249 45.5 247.5 47 C 246.5 45.5 246.5 43 247.5 35 Z"
+          fill="#2dd4bf"/>
+  </g>
+  <text x="247.5" y="86"
+        text-anchor="middle"
+        font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace"
+        font-size="30" font-weight="800" fill="#2dd4bf">3 days</text>
+  <text x="247.5" y="116"
+        text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+        font-size="13" font-weight="700" fill="#99f6e4">Current Streak</text>
+  <text x="247.5" y="142"
+        text-anchor="middle"
+        font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace"
+        font-size="10.5" font-weight="600" fill="#5eead4">Nov 22 – Nov 24</text>
+
+  <!-- ==================== COLUMN 3: LONGEST STREAK ==================== -->
+  <text x="406" y="86"
+        text-anchor="middle"
+        font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace"
+        font-size="28" font-weight="700" fill="#f8fafc">5 days</text>
+  <text x="406" y="116"
+        text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+        font-size="13" font-weight="600" fill="#2dd4bf">Longest Streak</text>
+  <text x="406" y="142"
+        text-anchor="middle"
+        font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace"
+        font-size="10.5" fill="#94a3b8">Sep 23 – Sep 27</text>
+</svg>
