@@ -71,7 +71,7 @@
   <text x="89" y="86"
         text-anchor="middle"
         font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace"
-        font-size="28" font-weight="700" fill="#f8fafc">120</text>
+        font-size="28" font-weight="700" fill="#f8fafc">122</text>
   <text x="89" y="116"
         text-anchor="middle"
         font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
@@ -89,7 +89,7 @@
   <text x="247.5" y="86"
         text-anchor="middle"
         font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace"
-        font-size="30" font-weight="800" fill="#2dd4bf">4 days</text>
+        font-size="30" font-weight="800" fill="#2dd4bf">5 days</text>
   <text x="247.5" y="116"
         text-anchor="middle"
         font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
@@ -97,7 +97,7 @@
   <text x="247.5" y="142"
         text-anchor="middle"
         font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace"
-        font-size="10.5" font-weight="600" fill="#5eead4">Nov 22 – Nov 25</text>
+        font-size="10.5" font-weight="600" fill="#5eead4">Nov 22 – Nov 26</text>
 
   <!-- ==================== COLUMN 3: LONGEST STREAK ==================== -->
   <text x="406" y="86"
