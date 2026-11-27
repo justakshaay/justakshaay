@@ -71,7 +71,7 @@
   <text x="89" y="86"
         text-anchor="middle"
         font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace"
-        font-size="28" font-weight="700" fill="#f8fafc">122</text>
+        font-size="28" font-weight="700" fill="#f8fafc">123</text>
   <text x="89" y="116"
         text-anchor="middle"
         font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
@@ -89,7 +89,7 @@
   <text x="247.5" y="86"
         text-anchor="middle"
         font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace"
-        font-size="30" font-weight="800" fill="#2dd4bf">5 days</text>
+        font-size="30" font-weight="800" fill="#2dd4bf">6 days</text>
   <text x="247.5" y="116"
         text-anchor="middle"
         font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
@@ -97,13 +97,13 @@
   <text x="247.5" y="142"
         text-anchor="middle"
         font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace"
-        font-size="10.5" font-weight="600" fill="#5eead4">Nov 22 – Nov 26</text>
+        font-size="10.5" font-weight="600" fill="#5eead4">Nov 22 – Nov 27</text>
 
   <!-- ==================== COLUMN 3: LONGEST STREAK ==================== -->
   <text x="406" y="86"
         text-anchor="middle"
         font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace"
-        font-size="28" font-weight="700" fill="#f8fafc">5 days</text>
+        font-size="28" font-weight="700" fill="#f8fafc">6 days</text>
   <text x="406" y="116"
         text-anchor="middle"
         font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
@@ -111,5 +111,5 @@
   <text x="406" y="142"
         text-anchor="middle"
         font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace"
-        font-size="10.5" fill="#94a3b8">Sep 23 – Sep 27</text>
+        font-size="10.5" fill="#94a3b8">Nov 22 – Nov 27</text>
 </svg>
